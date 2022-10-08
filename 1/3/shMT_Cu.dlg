@@ -1,0 +1,3135 @@
+          AutoDock 4.2 Release 4.2.6   
+         (C) 1989-2012 The Scripps Research Institute
+        AutoDock comes with ABSOLUTELY NO WARRANTY.
+        AutoDock is free software, and you are welcome
+        to redistribute it under certain conditions;
+        for details type 'autodock4 -C'
+
+                     main.cc  $Revision: 1.213 $
+
+                   Compiled on Jul 18 2014 at 15:34:58
+
+
+This file was created at:			9:40 17" p.m., 09/13/2022
+                   on host:		"QH-20160525KZZR"
+Current Working Directory = "C:\Users\Administrator\Desktop\ions_dock\3"
+
+      ________________________________________________________________
+
+                   SETTING UP DEFAULT PARAMETER LIBRARY
+      ________________________________________________________________
+
+
+Random number generator was seeded with values 8580, 1663076417.
+Docking parameter file (DPF) used for this docking:		C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DPF> autodock_parameter_version 4.2       # used by autodock to validate parameter set
+
+	Autodock parameter version 4.2.
+DPF> parameter_file AD4_parameters.dat       # parameter library filename 
+
+Using read_parameter_library() to try to open and read "AD4_parameters.dat".
+
+DPF> outlev 1                             # diagnostic output level
+
+Output Level = 1  ADT-COMPATIBLE OUTPUT DURING DOCKING.
+DPF> intelec                              # calculate internal electrostatics
+
+Electrostatic energies will be calculated for all non-bonds between moving atoms.
+DPF> seed pid time                        # seeds for random generator
+
+Random number generator was seeded with values 8580, 1663076417.
+DPF> ligand_types Cu                      # atoms types in ligand
+
+DPF> fld shMt.maps.fld                    # grid_data_file
+
+Opening Grid Map Dimensions file:		shMt.maps.fld
+Grid Point Spacing =				0.375 Angstroms
+
+Even Number of User-specified Grid Points =	126 x-points
+						72 y-points
+						80 z-points
+
+Coordinates of Central Grid Point of Maps =	(3.000, 3.000, 2.000)
+Macromolecule file used to create Grid Maps =	shMt.pdbqt
+Grid Parameter file used to create Grid Maps =	C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.gpf
+Minimum coordinates in grid = (-20.625, -10.500, -13.000)
+Maximum coordinates in grid = (26.625, 16.500, 17.000)
+
+DPF> map shMt.Cu.map                      # atom-specific affinity map
+
+DPF> elecmap shMt.e.map                   # electrostatics map
+
+DPF> desolvmap shMt.d.map                 # desolvation map
+
+DPF> move Cu.pdbqt                        # small molecule
+
+1,4-interactions will be _ignored_ in the non-bonded internal energy calculation.
+
+Ligand PDBQT file = "Cu.pdbqt"
+
+INPUT LIGAND PDBQT FILE:
+________________________
+
+INPUT-LIGAND-PDBQT: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+INPUT-LIGAND-PDBQT: REMARK  0 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK                            x       y       z     vdW  Elec       q    Type
+INPUT-LIGAND-PDBQT: REMARK                         _______ _______ _______ _____ _____    ______ ____
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: ATOM      1 CU   UNL     1      -8.945   1.559   0.000  0.00  2.00    +2.000 Cu
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: TORSDOF 0
+________________________________________________________________________________
+
+Total charge on ligand                               =	+2.000 e
+REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+
+*** No Rotatable Bonds detected in Small Molecule. ***
+
+Number of atoms in ligand:  1
+
+Number of non-hydrogen atoms in ligand:  1
+
+Number of vibrational degrees of freedom of ligand:  -3
+
+
+Number of torsional degrees of freedom = 0
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+
+DPF> about -8.945 1.559 0.0               # small molecule center
+
+Small molecule center of rotation =	(-8.945, +1.559, +0.000)
+
+DPF> tran0 random                         # initial coordinates/A or random
+
+Initial translation =			(-18.818, 3.718, 0.356) Angstroms
+DPF> quaternion0 random                   # initial orientation
+
+Each run will begin with a new, random initial orientation.
+Initial quaternion,  (x,y,z,w) =	( 0.417, -0.659, 0.487, -0.394 ),
+DPF> dihe0 random                         # initial dihedrals (relative) or random
+
+DPF> torsdof 0                            # torsional degrees of freedom
+
+Number of torsional degrees of freedom = 0
+Free energy coefficient for torsional degrees of freedom = 0.2744 as specified in parameter library "AD4_parameters.dat".
+
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+DPF> rmstol 2.0                           # cluster_tolerance/A
+
+Maximum RMS tolerance for conformational cluster analysis = 2.00 Angstroms
+DPF> extnrg 1000.0                        # external grid energy
+
+External grid energy (beyond grid map walls) = 1000.00
+
+DPF> e0max 0.0 10000                      # max initial energy; max number of retries
+
+Using user-specified maximum number of retries for simanneal initialization, 10000 retries.
+If the simanneal initial energy is greater than e0max, 0.000,
+then a new, random initial state will be created.
+
+DPF> ga_pop_size 150                      # number of individuals in population
+
+A population of 150 individuals will be used
+DPF> ga_num_evals 2500000                 # maximum number of energy evaluations
+
+There will be at most 2500000 function evaluations used.
+DPF> ga_num_generations 27000             # maximum number of generations
+
+The GA will run for at most 27000 generations.
+DPF> ga_elitism 1                         # number of top individuals to survive to next generation
+
+The 1 best will be preserved each GA generation.
+DPF> ga_mutation_rate 0.02                # rate of gene mutation
+
+The mutation rate is 0.020000.
+DPF> ga_crossover_rate 0.8                # rate of crossover
+
+The crossover rate is 0.800000.
+DPF> ga_window_size 10                    # 
+
+The GA's selection window is 10 generations.
+DPF> ga_cauchy_alpha 0.0                  # Alpha parameter of Cauchy distribution
+
+The alpha parameter (for the Cauchy distribution) is being set to 0.000000.
+DPF> ga_cauchy_beta 1.0                   # Beta parameter Cauchy distribution
+
+The beta parameter (for the Cauchy distribution) is being set to 1.000000.
+DPF> set_ga                               # set the above parameters for GA or LGA
+
+DPF> unbound_model bound                  # state of unbound ligand
+
+DPF> do_global_only 50                    # do this many GA runs
+
+centering ligand on specified point: -8.945 1.559 0.000
+Furthest true ligand atom from "about" center is 0.000 Angstroms (maxrad).
+Number of requested GA dockings = 50 runs
+Unbound model to be used is 'same as bound' [AutoDock 4.2 default].
+
+	BEGINNING GENETIC ALGORITHM DOCKING 1 of 50
+Run: 1 Seed: 923180240 153701362 [ Run 1 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.514
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 6.000 -9.750 -10.000 quatxyzw -0.068305 -0.194680 0.858566 0.469360 center -8.945 1.559 0.000 ntor 0
+State:	  6.000  -9.750 -10.000  -0.077 -0.220  0.972 124.015  
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  491.15 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.51 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.23 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.74 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 5.999995 -9.750015 -9.999992
+DOCKED: USER    NEWDPF quaternion0 -0.068305 -0.194680 0.858566 0.469360
+DOCKED: USER    NEWDPF axisangle0 -0.077355 -0.220474 0.972321 124.014538
+DOCKED: USER    NEWDPF quat0 -0.077355 -0.220474 0.972321 124.014538
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1       6.000  -9.750 -10.000 +1.23 -5.74    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 2 of 50
+Run: 2 Seed: 82112243 1130823498 [ Run 2 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.420542 0.263669 0.117211 -0.860165 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.825  0.517  0.230 -61.330  
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.15 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624637 15.749929 -11.875023
+DOCKED: USER    NEWDPF quaternion0 -0.420542 0.263669 0.117211 -0.860165
+DOCKED: USER    NEWDPF axisangle0 -0.824568 0.516982 0.229818 -61.329696
+DOCKED: USER    NEWDPF quat0 -0.824568 0.516982 0.229818 -61.329696
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 3 of 50
+Run: 3 Seed: 956065374 880873711 [ Run 3 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.801
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.626 15.751 -11.875 quatxyzw 0.368456 0.755222 0.501876 -0.204939 center -8.945 1.559 0.000 ntor 0
+State:	 14.626  15.751 -11.875   0.376  0.772  0.513 -156.348  
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.48 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625776 15.750735 -11.875048
+DOCKED: USER    NEWDPF quaternion0 0.368456 0.755222 0.501876 -0.204939
+DOCKED: USER    NEWDPF axisangle0 0.376447 0.771599 0.512760 -156.348135
+DOCKED: USER    NEWDPF quat0 0.376447 0.771599 0.512760 -156.348135
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.626  15.751 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 4 of 50
+Run: 4 Seed: 842027954 769478878 [ Run 4 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.661310 0.539326 0.510134 -0.107512 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.665  0.542  0.513 -167.656  
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624853 15.750085 -11.874982
+DOCKED: USER    NEWDPF quaternion0 0.661310 0.539326 0.510134 -0.107512
+DOCKED: USER    NEWDPF axisangle0 0.665165 0.542471 0.513109 -167.656151
+DOCKED: USER    NEWDPF quat0 0.665165 0.542471 0.513109 -167.656151
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 5 of 50
+Run: 5 Seed: 325191581 416572083 [ Run 5 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.522930 0.847208 -0.092902 -0.012280 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.523  0.847 -0.093 -178.593  
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.22 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.375037 -7.500092 -0.625036
+DOCKED: USER    NEWDPF quaternion0 -0.522930 0.847208 -0.092902 -0.012280
+DOCKED: USER    NEWDPF axisangle0 -0.522970 0.847272 -0.092909 -178.592761
+DOCKED: USER    NEWDPF quat0 -0.522970 0.847272 -0.092909 -178.592761
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 6 of 50
+Run: 6 Seed: 701424924 1557496991 [ Run 6 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.624 15.750 -11.875 quatxyzw -0.534363 0.782297 -0.123629 -0.295267 center -8.945 1.559 0.000 ntor 0
+State:	 14.624  15.750 -11.875  -0.559  0.819 -0.129 -145.653  
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.19 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624160 15.750044 -11.874997
+DOCKED: USER    NEWDPF quaternion0 -0.534363 0.782297 -0.123629 -0.295267
+DOCKED: USER    NEWDPF axisangle0 -0.559300 0.818804 -0.129398 -145.652944
+DOCKED: USER    NEWDPF quat0 -0.559300 0.818804 -0.129398 -145.652944
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.624  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 7 of 50
+Run: 7 Seed: 33294784 1678015089 [ Run 7 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.513
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 6.001 -9.750 -10.000 quatxyzw -0.357493 0.170367 -0.910241 0.120977 center -8.945 1.559 0.000 ntor 0
+State:	  6.001  -9.750 -10.000  -0.360  0.172 -0.917 166.103  
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  491.60 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.51 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.23 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.74 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 6.000708 -9.750066 -9.999835
+DOCKED: USER    NEWDPF quaternion0 -0.357493 0.170367 -0.910241 0.120977
+DOCKED: USER    NEWDPF axisangle0 -0.360138 0.171627 -0.916976 166.103017
+DOCKED: USER    NEWDPF quat0 -0.360138 0.171627 -0.916976 166.103017
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1       6.001  -9.750 -10.000 +1.23 -5.74    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 8 of 50
+Run: 8 Seed: 253736756 941120053 [ Run 8 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.655
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -8.625 -7.500 -0.250 quatxyzw -0.078207 0.026816 -0.505837 0.858658 center -8.945 1.559 0.000 ntor 0
+State:	 -8.625  -7.500  -0.250  -0.153  0.052 -0.987 61.667  
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  387.29 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.65 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.97 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -8.624946 -7.499979 -0.250142
+DOCKED: USER    NEWDPF quaternion0 -0.078207 0.026816 -0.505837 0.858658
+DOCKED: USER    NEWDPF axisangle0 -0.152584 0.052319 -0.986905 61.667499
+DOCKED: USER    NEWDPF quat0 -0.152584 0.052319 -0.986905 61.667499
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -8.625  -7.500  -0.250 +1.31 -5.97    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 9 of 50
+Run: 9 Seed: 1572109250 2141004784 [ Run 9 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.387
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -0.750 7.500 15.125 quatxyzw -0.568111 -0.505979 -0.292671 -0.579291 center -8.945 1.559 0.000 ntor 0
+State:	 -0.750   7.500  15.125  -0.697 -0.621 -0.359 -109.199  
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  609.00 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.21 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.60 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -0.750130 7.500108 15.125174
+DOCKED: USER    NEWDPF quaternion0 -0.568111 -0.505979 -0.292671 -0.579291
+DOCKED: USER    NEWDPF axisangle0 -0.696966 -0.620742 -0.359053 -109.198654
+DOCKED: USER    NEWDPF quat0 -0.696966 -0.620742 -0.359053 -109.198654
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -0.750   7.500  15.125 +1.21 -5.60    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 10 of 50
+Run: 10 Seed: 944616904 1225164856 [ Run 10 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.168070 0.922797 -0.023663 -0.345888 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.179  0.984 -0.025 -139.528  
+
+DOCKED: MODEL       10
+DOCKED: USER    Run = 10
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.21 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.375007 -7.500100 -0.624994
+DOCKED: USER    NEWDPF quaternion0 -0.168070 0.922797 -0.023663 -0.345888
+DOCKED: USER    NEWDPF axisangle0 -0.179126 0.983503 -0.025219 -139.527930
+DOCKED: USER    NEWDPF quat0 -0.179126 0.983503 -0.025219 -139.527930
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 11 of 50
+Run: 11 Seed: 983820565 1788906839 [ Run 11 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.396693 0.491168 -0.271305 0.726486 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.577  0.715 -0.395 86.815  
+
+DOCKED: MODEL       11
+DOCKED: USER    Run = 11
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.39 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374892 -7.500034 -0.625239
+DOCKED: USER    NEWDPF quaternion0 -0.396693 0.491168 -0.271305 0.726486
+DOCKED: USER    NEWDPF axisangle0 -0.577276 0.714758 -0.394808 86.814744
+DOCKED: USER    NEWDPF quat0 -0.577276 0.714758 -0.394808 86.814744
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 12 of 50
+Run: 12 Seed: 1666849768 974659585 [ Run 12 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.205023 -0.485297 0.771751 0.356165 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.219 -0.519  0.826 138.270  
+
+DOCKED: MODEL       12
+DOCKED: USER    Run = 12
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.09 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625062 15.749967 -11.875014
+DOCKED: USER    NEWDPF quaternion0 -0.205023 -0.485297 0.771751 0.356165
+DOCKED: USER    NEWDPF axisangle0 -0.219411 -0.519355 0.825911 138.270320
+DOCKED: USER    NEWDPF quat0 -0.219411 -0.519355 0.825911 138.270320
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 13 of 50
+Run: 13 Seed: 1687207128 210064865 [ Run 13 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.390136 -0.562284 -0.386183 -0.618461 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.496 -0.716 -0.491 -103.592  
+
+DOCKED: MODEL       13
+DOCKED: USER    Run = 13
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.32 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374967 -7.500360 -0.625129
+DOCKED: USER    NEWDPF quaternion0 -0.390136 -0.562284 -0.386183 -0.618461
+DOCKED: USER    NEWDPF axisangle0 -0.496472 -0.715541 -0.491443 -103.592386
+DOCKED: USER    NEWDPF quat0 -0.496472 -0.715541 -0.491443 -103.592386
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 14 of 50
+Run: 14 Seed: 328046492 574155167 [ Run 14 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.658540 0.243256 0.438399 -0.561211 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.796  0.294  0.530 -111.721  
+
+DOCKED: MODEL       14
+DOCKED: USER    Run = 14
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.14 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625043 15.749916 -11.875039
+DOCKED: USER    NEWDPF quaternion0 -0.658540 0.243256 0.438399 -0.561211
+DOCKED: USER    NEWDPF axisangle0 -0.795653 0.293904 0.529677 -111.720810
+DOCKED: USER    NEWDPF quat0 -0.795653 0.293904 0.529677 -111.720810
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 15 of 50
+Run: 15 Seed: 631522920 69333775 [ Run 15 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw 0.123255 -0.739841 0.492362 -0.441614 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625   0.137 -0.825  0.549 -127.586  
+
+DOCKED: MODEL       15
+DOCKED: USER    Run = 15
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374988 -7.500021 -0.625002
+DOCKED: USER    NEWDPF quaternion0 0.123255 -0.739841 0.492362 -0.441614
+DOCKED: USER    NEWDPF axisangle0 0.137377 -0.824606 0.548773 -127.586251
+DOCKED: USER    NEWDPF quat0 0.137377 -0.824606 0.548773 -127.586251
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 16 of 50
+Run: 16 Seed: 1022442599 470905932 [ Run 16 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.936039 -0.080735 -0.342510 0.000734 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.936 -0.081 -0.343 179.916  
+
+DOCKED: MODEL       16
+DOCKED: USER    Run = 16
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.17 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625077 15.749947 -11.875076
+DOCKED: USER    NEWDPF quaternion0 0.936039 -0.080735 -0.342510 0.000734
+DOCKED: USER    NEWDPF axisangle0 0.936039 -0.080735 -0.342510 179.915875
+DOCKED: USER    NEWDPF quat0 0.936039 -0.080735 -0.342510 179.915875
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 17 of 50
+Run: 17 Seed: 2016573137 940860064 [ Run 17 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.730502 0.406115 0.326148 0.441662 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.814  0.453  0.364 127.580  
+
+DOCKED: MODEL       17
+DOCKED: USER    Run = 17
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.22 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625169 15.750075 -11.875107
+DOCKED: USER    NEWDPF quaternion0 -0.730502 0.406115 0.326148 0.441662
+DOCKED: USER    NEWDPF axisangle0 -0.814218 0.452657 0.363525 127.580071
+DOCKED: USER    NEWDPF quat0 -0.814218 0.452657 0.363525 127.580071
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 18 of 50
+Run: 18 Seed: 1591568142 1551669449 [ Run 18 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.762730 0.480255 -0.416098 -0.120251 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.768  0.484 -0.419 -166.187  
+
+DOCKED: MODEL       18
+DOCKED: USER    Run = 18
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374962 -7.500001 -0.625001
+DOCKED: USER    NEWDPF quaternion0 -0.762730 0.480255 -0.416098 -0.120251
+DOCKED: USER    NEWDPF axisangle0 -0.768305 0.483766 -0.419140 -166.186823
+DOCKED: USER    NEWDPF quat0 -0.768305 0.483766 -0.419140 -166.186823
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 19 of 50
+Run: 19 Seed: 304993295 890997404 [ Run 19 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.270018 -0.072296 0.730104 -0.623547 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.345 -0.092  0.934 -102.849  
+
+DOCKED: MODEL       19
+DOCKED: USER    Run = 19
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.18 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624984 15.749906 -11.874971
+DOCKED: USER    NEWDPF quaternion0 0.270018 -0.072296 0.730104 -0.623547
+DOCKED: USER    NEWDPF axisangle0 0.345387 -0.092475 0.933893 -102.848730
+DOCKED: USER    NEWDPF quat0 0.345387 -0.092475 0.933893 -102.848730
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 20 of 50
+Run: 20 Seed: 529835943 1052312043 [ Run 20 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.801
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.377989 -0.471532 -0.469986 -0.643347 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.494 -0.616 -0.614 -99.916  
+
+DOCKED: MODEL       20
+DOCKED: USER    Run = 20
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.42 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624508 15.749956 -11.875281
+DOCKED: USER    NEWDPF quaternion0 0.377989 -0.471532 -0.469986 -0.643347
+DOCKED: USER    NEWDPF axisangle0 0.493732 -0.615919 -0.613899 -99.916298
+DOCKED: USER    NEWDPF quat0 0.493732 -0.615919 -0.613899 -99.916298
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 21 of 50
+Run: 21 Seed: 675161081 356279968 [ Run 21 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.637950 0.247108 0.713379 0.151817 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.645  0.250  0.722 162.536  
+
+DOCKED: MODEL       21
+DOCKED: USER    Run = 21
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.19 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624954 15.750410 -11.875001
+DOCKED: USER    NEWDPF quaternion0 -0.637950 0.247108 0.713379 0.151817
+DOCKED: USER    NEWDPF axisangle0 -0.645432 0.250006 0.721745 162.535515
+DOCKED: USER    NEWDPF quat0 -0.645432 0.250006 0.721745 162.535515
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 22 of 50
+Run: 22 Seed: 125328157 912208751 [ Run 22 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.389613 -0.668342 0.557614 0.300979 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.409 -0.701  0.585 144.967  
+
+DOCKED: MODEL       22
+DOCKED: USER    Run = 22
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625127 15.750229 -11.875007
+DOCKED: USER    NEWDPF quaternion0 0.389613 -0.668342 0.557614 0.300979
+DOCKED: USER    NEWDPF axisangle0 0.408558 -0.700839 0.584727 144.967203
+DOCKED: USER    NEWDPF quat0 0.408558 -0.700839 0.584727 144.967203
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 23 of 50
+Run: 23 Seed: 1718797878 102339664 [ Run 23 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.624 15.750 -11.875 quatxyzw 0.350551 -0.449776 -0.802515 0.175458 center -8.945 1.559 0.000 ntor 0
+State:	 14.624  15.750 -11.875   0.356 -0.457 -0.815 159.789  
+
+DOCKED: MODEL       23
+DOCKED: USER    Run = 23
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624428 15.749969 -11.875020
+DOCKED: USER    NEWDPF quaternion0 0.350551 -0.449776 -0.802515 0.175458
+DOCKED: USER    NEWDPF axisangle0 0.356075 -0.456863 -0.815161 159.789422
+DOCKED: USER    NEWDPF quat0 0.356075 -0.456863 -0.815161 159.789422
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.624  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 24 of 50
+Run: 24 Seed: 334330822 1918614212 [ Run 24 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.517503 -0.675648 0.310960 -0.423076 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.571 -0.746  0.343 -129.942  
+
+DOCKED: MODEL       24
+DOCKED: USER    Run = 24
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.35 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374903 -7.500001 -0.625202
+DOCKED: USER    NEWDPF quaternion0 -0.517503 -0.675648 0.310960 -0.423076
+DOCKED: USER    NEWDPF axisangle0 -0.571136 -0.745671 0.343188 -129.942138
+DOCKED: USER    NEWDPF quat0 -0.571136 -0.745671 0.343188 -129.942138
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 25 of 50
+Run: 25 Seed: 1819055543 496518307 [ Run 25 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.387
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -0.750 7.500 15.125 quatxyzw 0.624548 -0.188342 0.688674 -0.316536 center -8.945 1.559 0.000 ntor 0
+State:	 -0.750   7.500  15.125   0.658 -0.199  0.726 -143.093  
+
+DOCKED: MODEL       25
+DOCKED: USER    Run = 25
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  608.56 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.21 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.60 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -0.749996 7.500017 15.125002
+DOCKED: USER    NEWDPF quaternion0 0.624548 -0.188342 0.688674 -0.316536
+DOCKED: USER    NEWDPF axisangle0 0.658403 -0.198552 0.726005 -143.092821
+DOCKED: USER    NEWDPF quat0 0.658403 -0.198552 0.726005 -143.092821
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -0.750   7.500  15.125 +1.21 -5.60    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 26 of 50
+Run: 26 Seed: 431061557 1457895389 [ Run 26 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.514
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 6.000 -9.750 -10.000 quatxyzw 0.365438 -0.075336 -0.475455 -0.796695 center -8.945 1.559 0.000 ntor 0
+State:	  6.000  -9.750 -10.000   0.605 -0.125 -0.787 -74.369  
+
+DOCKED: MODEL       26
+DOCKED: USER    Run = 26
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  491.31 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.51 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.23 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.74 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 5.999984 -9.750121 -9.999948
+DOCKED: USER    NEWDPF quaternion0 0.365438 -0.075336 -0.475455 -0.796695
+DOCKED: USER    NEWDPF axisangle0 0.604647 -0.124650 -0.786679 -74.368797
+DOCKED: USER    NEWDPF quat0 0.604647 -0.124650 -0.786679 -74.368797
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1       6.000  -9.750 -10.000 +1.23 -5.74    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 27 of 50
+Run: 27 Seed: 918822782 1369370852 [ Run 27 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.048437 -0.520399 -0.829072 0.198692 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.049 -0.531 -0.846 157.079  
+
+DOCKED: MODEL       27
+DOCKED: USER    Run = 27
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625045 15.750088 -11.875072
+DOCKED: USER    NEWDPF quaternion0 0.048437 -0.520399 -0.829072 0.198692
+DOCKED: USER    NEWDPF axisangle0 0.049422 -0.530986 -0.845938 157.079045
+DOCKED: USER    NEWDPF quat0 0.049422 -0.530986 -0.845938 157.079045
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 28 of 50
+Run: 28 Seed: 1088207432 1935296339 [ Run 28 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.090424 -0.746688 -0.113153 0.649213 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.119 -0.982 -0.149 99.035  
+
+DOCKED: MODEL       28
+DOCKED: USER    Run = 28
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.09 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625154 15.749990 -11.875003
+DOCKED: USER    NEWDPF quaternion0 0.090424 -0.746688 -0.113153 0.649213
+DOCKED: USER    NEWDPF axisangle0 0.118885 -0.981700 -0.148767 99.035492
+DOCKED: USER    NEWDPF quat0 0.118885 -0.981700 -0.148767 99.035492
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 29 of 50
+Run: 29 Seed: 1617501132 1562308352 [ Run 29 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.619414 -0.030140 0.639139 0.454883 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.696 -0.034  0.718 125.885  
+
+DOCKED: MODEL       29
+DOCKED: USER    Run = 29
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.22 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374978 -7.500206 -0.625041
+DOCKED: USER    NEWDPF quaternion0 -0.619414 -0.030140 0.639139 0.454883
+DOCKED: USER    NEWDPF axisangle0 -0.695540 -0.033845 0.717689 125.885144
+DOCKED: USER    NEWDPF quat0 -0.695540 -0.033845 0.717689 125.885144
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 30 of 50
+Run: 30 Seed: 1068762374 1242133972 [ Run 30 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.105383 -0.302707 -0.947143 0.013543 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.105 -0.303 -0.947 178.448  
+
+DOCKED: MODEL       30
+DOCKED: USER    Run = 30
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.30 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625129 15.750081 -11.874937
+DOCKED: USER    NEWDPF quaternion0 -0.105383 -0.302707 -0.947143 0.013543
+DOCKED: USER    NEWDPF axisangle0 -0.105393 -0.302734 -0.947230 178.448087
+DOCKED: USER    NEWDPF quat0 -0.105393 -0.302734 -0.947230 178.448087
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 31 of 50
+Run: 31 Seed: 915680242 2013762532 [ Run 31 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.655
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -8.625 -7.500 -0.250 quatxyzw 0.446903 0.250635 -0.672713 0.533777 center -8.945 1.559 0.000 ntor 0
+State:	 -8.625  -7.500  -0.250   0.528  0.296 -0.796 115.478  
+
+DOCKED: MODEL       31
+DOCKED: USER    Run = 31
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  387.15 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.65 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.32 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.97 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -8.625007 -7.499940 -0.250017
+DOCKED: USER    NEWDPF quaternion0 0.446903 0.250635 -0.672713 0.533777
+DOCKED: USER    NEWDPF axisangle0 0.528488 0.296390 -0.795521 115.477970
+DOCKED: USER    NEWDPF quat0 0.528488 0.296390 -0.795521 115.477970
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -8.625  -7.500  -0.250 +1.32 -5.97    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 32 of 50
+Run: 32 Seed: 1080716030 1138809042 [ Run 32 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.657
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.626 quatxyzw -0.555860 -0.297754 -0.619248 0.467862 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.626  -0.629 -0.337 -0.701 124.209  
+
+DOCKED: MODEL       32
+DOCKED: USER    Run = 32
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.67 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374747 -7.500156 -0.625510
+DOCKED: USER    NEWDPF quaternion0 -0.555860 -0.297754 -0.619248 0.467862
+DOCKED: USER    NEWDPF axisangle0 -0.628942 -0.336901 -0.700664 124.208778
+DOCKED: USER    NEWDPF quat0 -0.628942 -0.336901 -0.700664 124.208778
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.626 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 33 of 50
+Run: 33 Seed: 270753381 1093452936 [ Run 33 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.535159 -0.073586 -0.634907 -0.552343 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.642 -0.088 -0.762 -112.944  
+
+DOCKED: MODEL       33
+DOCKED: USER    Run = 33
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.20 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625115 15.749839 -11.875055
+DOCKED: USER    NEWDPF quaternion0 -0.535159 -0.073586 -0.634907 -0.552343
+DOCKED: USER    NEWDPF axisangle0 -0.641973 -0.088273 -0.761629 -112.944140
+DOCKED: USER    NEWDPF quat0 -0.641973 -0.088273 -0.761629 -112.944140
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 34 of 50
+Run: 34 Seed: 1400866482 2118682178 [ Run 34 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.387
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -0.750 7.500 15.125 quatxyzw 0.414659 0.579888 -0.698145 0.066199 center -8.945 1.559 0.000 ntor 0
+State:	 -0.750   7.500  15.125   0.416  0.581 -0.700 172.409  
+
+DOCKED: MODEL       34
+DOCKED: USER    Run = 34
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  608.74 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.21 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.60 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -0.750177 7.499963 15.124993
+DOCKED: USER    NEWDPF quaternion0 0.414659 0.579888 -0.698145 0.066199
+DOCKED: USER    NEWDPF axisangle0 0.415571 0.581162 -0.699679 172.408593
+DOCKED: USER    NEWDPF quat0 0.415571 0.581162 -0.699679 172.408593
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -0.750   7.500  15.125 +1.21 -5.60    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 35 of 50
+Run: 35 Seed: 1478003822 866517467 [ Run 35 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw 0.315208 0.907912 -0.240831 0.135422 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625   0.318  0.916 -0.243 164.434  
+
+DOCKED: MODEL       35
+DOCKED: USER    Run = 35
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.28 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374905 -7.500486 -0.625059
+DOCKED: USER    NEWDPF quaternion0 0.315208 0.907912 -0.240831 0.135422
+DOCKED: USER    NEWDPF axisangle0 0.318139 0.916354 -0.243071 164.433961
+DOCKED: USER    NEWDPF quat0 0.318139 0.916354 -0.243071 164.433961
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 36 of 50
+Run: 36 Seed: 1456886309 1249171541 [ Run 36 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.699967 0.023786 -0.619107 -0.355227 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.749  0.025 -0.662 -138.385  
+
+DOCKED: MODEL       36
+DOCKED: USER    Run = 36
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.39 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374825 -7.500012 -0.625228
+DOCKED: USER    NEWDPF quaternion0 -0.699967 0.023786 -0.619107 -0.355227
+DOCKED: USER    NEWDPF axisangle0 -0.748805 0.025446 -0.662302 -138.385253
+DOCKED: USER    NEWDPF quat0 -0.748805 0.025446 -0.662302 -138.385253
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 37 of 50
+Run: 37 Seed: 1201565698 1448560433 [ Run 37 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.801
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.088904 -0.111378 -0.617743 0.773359 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.140 -0.176 -0.974 78.687  
+
+DOCKED: MODEL       37
+DOCKED: USER    Run = 37
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.58 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624824 15.750036 -11.875479
+DOCKED: USER    NEWDPF quaternion0 0.088904 -0.111378 -0.617743 0.773359
+DOCKED: USER    NEWDPF axisangle0 0.140235 -0.175684 -0.974407 78.686972
+DOCKED: USER    NEWDPF quat0 0.140235 -0.175684 -0.974407 78.686972
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 38 of 50
+Run: 38 Seed: 403177187 1199098756 [ Run 38 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.801
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.751 -11.875 quatxyzw 0.072454 0.537073 0.627960 -0.558542 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.751 -11.875   0.087  0.647  0.757 -112.090  
+
+DOCKED: MODEL       38
+DOCKED: USER    Run = 38
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.58 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625009 15.750689 -11.875309
+DOCKED: USER    NEWDPF quaternion0 0.072454 0.537073 0.627960 -0.558542
+DOCKED: USER    NEWDPF axisangle0 0.087349 0.647485 0.757056 -112.090003
+DOCKED: USER    NEWDPF quat0 0.087349 0.647485 0.757056 -112.090003
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.751 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 39 of 50
+Run: 39 Seed: 862452315 1189803934 [ Run 39 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.801
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.001266 -0.888131 -0.452996 -0.077560 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.001 -0.891 -0.454 -171.103  
+
+DOCKED: MODEL       39
+DOCKED: USER    Run = 39
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.51 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625117 15.750035 -11.875418
+DOCKED: USER    NEWDPF quaternion0 -0.001266 -0.888131 -0.452996 -0.077560
+DOCKED: USER    NEWDPF axisangle0 -0.001270 -0.890815 -0.454365 -171.103333
+DOCKED: USER    NEWDPF quat0 -0.001270 -0.890815 -0.454365 -171.103333
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 40 of 50
+Run: 40 Seed: 606151801 644515552 [ Run 40 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.075
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -18.000 5.250 11.000 quatxyzw -0.025336 -0.309171 0.677520 -0.666887 center -8.945 1.559 0.000 ntor 0
+State:	-18.000   5.250  11.000  -0.034 -0.415  0.909 -96.346  
+
+DOCKED: MODEL       40
+DOCKED: USER    Run = 40
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.07 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    1.03 mM (millimolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.07 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.28 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.36 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -17.999861 5.249947 11.000120
+DOCKED: USER    NEWDPF quaternion0 -0.025336 -0.309171 0.677520 -0.666887
+DOCKED: USER    NEWDPF axisangle0 -0.034001 -0.414906 0.909229 -96.345557
+DOCKED: USER    NEWDPF quat0 -0.034001 -0.414906 0.909229 -96.345557
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1     -18.000   5.250  11.000 +1.28 -5.36    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 41 of 50
+Run: 41 Seed: 637627329 184503191 [ Run 41 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.117656 -0.455238 0.660269 -0.585628 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.145 -0.562  0.815 -108.305  
+
+DOCKED: MODEL       41
+DOCKED: USER    Run = 41
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.624940 15.750054 -11.875077
+DOCKED: USER    NEWDPF quaternion0 0.117656 -0.455238 0.660269 -0.585628
+DOCKED: USER    NEWDPF axisangle0 0.145151 -0.561620 0.814564 -108.305283
+DOCKED: USER    NEWDPF quat0 0.145151 -0.561620 0.814564 -108.305283
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 42 of 50
+Run: 42 Seed: 1553276289 1163624545 [ Run 42 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.387
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -0.750 7.500 15.125 quatxyzw -0.583075 -0.523011 -0.420265 0.458106 center -8.945 1.559 0.000 ntor 0
+State:	 -0.750   7.500  15.125  -0.656 -0.588 -0.473 125.470  
+
+DOCKED: MODEL       42
+DOCKED: USER    Run = 42
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  608.80 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.21 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.60 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -0.750001 7.500139 15.125074
+DOCKED: USER    NEWDPF quaternion0 -0.583075 -0.523011 -0.420265 0.458106
+DOCKED: USER    NEWDPF axisangle0 -0.655953 -0.588381 -0.472793 125.470071
+DOCKED: USER    NEWDPF quat0 -0.655953 -0.588381 -0.472793 125.470071
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -0.750   7.500  15.125 +1.21 -5.60    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 43 of 50
+Run: 43 Seed: 1554338886 2106939925 [ Run 43 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw 0.096275 -0.109065 0.934776 -0.324081 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875   0.102 -0.115  0.988 -142.180  
+
+DOCKED: MODEL       43
+DOCKED: USER    Run = 43
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.29 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625047 15.749979 -11.875216
+DOCKED: USER    NEWDPF quaternion0 0.096275 -0.109065 0.934776 -0.324081
+DOCKED: USER    NEWDPF axisangle0 0.101768 -0.115288 0.988105 -142.180126
+DOCKED: USER    NEWDPF quat0 0.101768 -0.115288 0.988105 -142.180126
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 44 of 50
+Run: 44 Seed: 209972892 2120129646 [ Run 44 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.374 -7.500 -0.625 quatxyzw -0.006281 0.474455 0.829198 0.295437 center -8.945 1.559 0.000 ntor 0
+State:	 -9.374  -7.500  -0.625  -0.007  0.497  0.868 145.633  
+
+DOCKED: MODEL       44
+DOCKED: USER    Run = 44
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.27 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374426 -7.500119 -0.625060
+DOCKED: USER    NEWDPF quaternion0 -0.006281 0.474455 0.829198 0.295437
+DOCKED: USER    NEWDPF axisangle0 -0.006575 0.496623 0.867941 145.632548
+DOCKED: USER    NEWDPF quat0 -0.006575 0.496623 0.867941 145.632548
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.374  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 45 of 50
+Run: 45 Seed: 2142308937 1903509958 [ Run 45 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.655
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -8.625 -7.500 -0.250 quatxyzw -0.546388 0.833346 -0.048362 0.068233 center -8.945 1.559 0.000 ntor 0
+State:	 -8.625  -7.500  -0.250  -0.548  0.835 -0.048 172.175  
+
+DOCKED: MODEL       45
+DOCKED: USER    Run = 45
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  387.36 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.65 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.97 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -8.624948 -7.500088 -0.250177
+DOCKED: USER    NEWDPF quaternion0 -0.546388 0.833346 -0.048362 0.068233
+DOCKED: USER    NEWDPF axisangle0 -0.547664 0.835293 -0.048475 172.174971
+DOCKED: USER    NEWDPF quat0 -0.547664 0.835293 -0.048475 172.174971
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -8.625  -7.500  -0.250 +1.31 -5.97    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 46 of 50
+Run: 46 Seed: 945862875 549838677 [ Run 46 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.517442 0.224351 -0.298163 -0.770077 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.811  0.352 -0.467 -79.278  
+
+DOCKED: MODEL       46
+DOCKED: USER    Run = 46
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.20 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625086 15.750057 -11.875107
+DOCKED: USER    NEWDPF quaternion0 -0.517442 0.224351 -0.298163 -0.770077
+DOCKED: USER    NEWDPF axisangle0 -0.811100 0.351675 -0.467377 -79.278331
+DOCKED: USER    NEWDPF quat0 -0.811100 0.351675 -0.467377 -79.278331
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 47 of 50
+Run: 47 Seed: 1894080159 1318111711 [ Run 47 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.545997 -0.629461 -0.545608 -0.089319 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.548 -0.632 -0.548 -169.751  
+
+DOCKED: MODEL       47
+DOCKED: USER    Run = 47
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.12 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625138 15.750073 -11.874996
+DOCKED: USER    NEWDPF quaternion0 -0.545997 -0.629461 -0.545608 -0.089319
+DOCKED: USER    NEWDPF axisangle0 -0.548188 -0.631987 -0.547797 -169.751102
+DOCKED: USER    NEWDPF quat0 -0.548188 -0.631987 -0.547797 -169.751102
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 48 of 50
+Run: 48 Seed: 1047417939 1881428877 [ Run 48 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.658
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.124413 0.108795 0.591824 0.788942 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.202  0.177  0.963 75.826  
+
+DOCKED: MODEL       48
+DOCKED: USER    Run = 48
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.43 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374887 -7.500263 -0.625246
+DOCKED: USER    NEWDPF quaternion0 -0.124413 0.108795 0.591824 0.788942
+DOCKED: USER    NEWDPF axisangle0 -0.202472 0.177055 0.963149 75.826446
+DOCKED: USER    NEWDPF quat0 -0.202472 0.177055 0.963149 75.826446
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 49 of 50
+Run: 49 Seed: 1115814181 1926557062 [ Run 49 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.802
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 14.625 15.750 -11.875 quatxyzw -0.772409 -0.473784 0.356533 -0.227590 center -8.945 1.559 0.000 ntor 0
+State:	 14.625  15.750 -11.875  -0.793 -0.487  0.366 -153.690  
+
+DOCKED: MODEL       49
+DOCKED: USER    Run = 49
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  302.17 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -5.93 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 14.625461 15.750029 -11.875023
+DOCKED: USER    NEWDPF quaternion0 -0.772409 -0.473784 0.356533 -0.227590
+DOCKED: USER    NEWDPF axisangle0 -0.793226 -0.486552 0.366142 -153.689531
+DOCKED: USER    NEWDPF quat0 -0.793226 -0.486552 0.366142 -153.689531
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 50 of 50
+Run: 50 Seed: 1149732459 1117504662 [ Run 50 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -4.657
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -9.375 -7.500 -0.625 quatxyzw -0.605317 -0.097944 0.659129 -0.435371 center -8.945 1.559 0.000 ntor 0
+State:	 -9.375  -7.500  -0.625  -0.672 -0.109  0.732 -128.382  
+
+DOCKED: MODEL       50
+DOCKED: USER    Run = 50
+DOCKED: USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =  385.53 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Cu.pdbqt
+DOCKED: USER    NEWDPF about -8.945000 1.559000 0.000000
+DOCKED: USER    NEWDPF tran0 -9.374947 -7.500003 -0.625391
+DOCKED: USER    NEWDPF quaternion0 -0.605317 -0.097944 0.659129 -0.435371
+DOCKED: USER    NEWDPF axisangle0 -0.672386 -0.108796 0.732161 -128.382234
+DOCKED: USER    NEWDPF quat0 -0.672386 -0.108796 0.732161 -128.382234
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000 Cu
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+DPF> analysis                             # perform a ranked cluster analysis
+
+
+		CLUSTER ANALYSIS OF CONFORMATIONS
+		_________________________________
+
+Number of conformations = 50
+
+RMSD cluster analysis will be performed using the ligand atoms only (1 / 1 total atoms).
+
+Outputting structurally similar clusters, ranked in order of increasing energy.
+
+
+________________________________________________________________________________
+
+Number of distinct conformational clusters found = 5,  out of 50 runs,
+Using an rmsd-tolerance of 2.0 A
+
+
+	CLUSTERING HISTOGRAM
+	____________________
+
+________________________________________________________________________________
+     |           |     |           |     |                                    
+Clus | Lowest    | Run | Mean      | Num | Histogram                          
+-ter | Binding   |     | Binding   | in  |                                    
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -4.80 |  28 |     -4.80 |  25 |#########################
+   2 |     -4.66 |  18 |     -4.66 |  17 |#################
+   3 |     -4.51 |   1 |     -4.51 |   3 |###
+   4 |     -4.39 |  25 |     -4.39 |   4 |####
+   5 |     -4.07 |  40 |     -4.07 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+Number of multi-member conformational clusters found = 4, out of 50 runs.
+
+	RMSD TABLE
+	__________
+
+_____________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     28       -4.80      0.00     29.97           RANKING
+   1      2     12       -4.80      0.00     29.97           RANKING
+   1      3     47       -4.80      0.00     29.97           RANKING
+   1      4     14       -4.80      0.00     29.97           RANKING
+   1      5      2       -4.80      0.00     29.97           RANKING
+   1      6      4       -4.80      0.00     29.97           RANKING
+   1      7     22       -4.80      0.00     29.97           RANKING
+   1      8     41       -4.80      0.00     29.97           RANKING
+   1      9     23       -4.80      0.00     29.97           RANKING
+   1     10     27       -4.80      0.00     29.97           RANKING
+   1     11     16       -4.80      0.00     29.97           RANKING
+   1     12     49       -4.80      0.00     29.97           RANKING
+   1     13     19       -4.80      0.00     29.97           RANKING
+   1     14      6       -4.80      0.00     29.97           RANKING
+   1     15     21       -4.80      0.00     29.97           RANKING
+   1     16     33       -4.80      0.00     29.97           RANKING
+   1     17     46       -4.80      0.00     29.97           RANKING
+   1     18     17       -4.80      0.00     29.97           RANKING
+   1     19     43       -4.80      0.00     29.97           RANKING
+   1     20     30       -4.80      0.00     29.97           RANKING
+   1     21     20       -4.80      0.00     29.97           RANKING
+   1     22      3       -4.80      0.00     29.97           RANKING
+   1     23     39       -4.80      0.00     29.97           RANKING
+   1     24     37       -4.80      0.00     29.97           RANKING
+   1     25     38       -4.80      0.00     29.97           RANKING
+   2      1     18       -4.66      0.00      9.09           RANKING
+   2      2     15       -4.66      0.00      9.09           RANKING
+   2      3     10       -4.66      0.00      9.09           RANKING
+   2      4     29       -4.66      0.00      9.09           RANKING
+   2      5      5       -4.66      0.00      9.09           RANKING
+   2      6     44       -4.66      0.00      9.09           RANKING
+   2      7     35       -4.66      0.00      9.09           RANKING
+   2      8     13       -4.66      0.00      9.09           RANKING
+   2      9     24       -4.66      0.00      9.09           RANKING
+   2     10     36       -4.66      0.00      9.09           RANKING
+   2     11     11       -4.66      0.00      9.09           RANKING
+   2     12     48       -4.66      0.00      9.09           RANKING
+   2     13     50       -4.66      0.00      9.09           RANKING
+   2     14     32       -4.66      0.00      9.09           RANKING
+   2     15     31       -4.65      0.84      9.07           RANKING
+   2     16      8       -4.65      0.84      9.07           RANKING
+   2     17     45       -4.65      0.84      9.07           RANKING
+   3      1      1       -4.51      0.00     21.24           RANKING
+   3      2     26       -4.51      0.00     21.24           RANKING
+   3      3      7       -4.51      0.00     21.24           RANKING
+   4      1     25       -4.39      0.00     18.20           RANKING
+   4      2     34       -4.39      0.00     18.20           RANKING
+   4      3     42       -4.39      0.00     18.20           RANKING
+   4      4      9       -4.39      0.00     18.20           RANKING
+   5      1     40       -4.07      0.00     14.72           RANKING
+_______________________________________________________________________
+
+
+
+	INFORMATION ENTROPY ANALYSIS FOR THIS CLUSTERING
+	________________________________________________
+
+
+Information entropy for this clustering = 0.30  (rmstol = 2.00 Angstrom)
+
+_______________________________________________________________________
+
+
+	STATISTICAL MECHANICAL ANALYSIS
+	_______________________________
+
+
+Partition function, Q =    50.40            at Temperature, T = 298.15 K
+Free energy,        A ~ -2322.49 kcal/mol   at Temperature, T = 298.15 K
+Internal energy,    U =    -4.69 kcal/mol   at Temperature, T = 298.15 K
+Entropy,            S =     7.77 kcal/mol/K at Temperature, T = 298.15 K
+
+_______________________________________________________________________
+
+
+	LOWEST ENERGY DOCKED CONFORMATION from EACH CLUSTER
+	___________________________________________________
+
+
+
+Keeping original residue number (specified in the input PDBQ file) for outputting.
+
+MODEL       28
+USER    Run = 28
+USER    Cluster Rank = 1
+USER    Number of conformations in this cluster = 25
+USER  
+USER    RMSD from reference structure       = 29.966 A
+USER  
+USER    Estimated Free Energy of Binding    =   -4.80 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  302.09 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -4.80 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.13 kcal/mol
+USER        Electrostatic Energy            =   -5.93 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+USER    NEWDPF move	Cu.pdbqt
+USER    NEWDPF about	-8.945000 1.559000 0.000000
+USER    NEWDPF tran0	14.625154 15.749990 -11.875003
+USER    NEWDPF axisangle0	0.118885 -0.981700 -0.148767 99.035492
+USER    NEWDPF quaternion0	0.090424 -0.746688 -0.113153 0.649213
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 CU   UNL     1      14.625  15.750 -11.875 +1.13 -5.93    +2.000    29.966
+TER
+ENDMDL
+MODEL       18
+USER    Run = 18
+USER    Cluster Rank = 2
+USER    Number of conformations in this cluster = 17
+USER  
+USER    RMSD from reference structure       = 9.091 A
+USER  
+USER    Estimated Free Energy of Binding    =   -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  385.16 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -4.66 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.60 kcal/mol
+USER        Electrostatic Energy            =   -6.26 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+USER    NEWDPF move	Cu.pdbqt
+USER    NEWDPF about	-8.945000 1.559000 0.000000
+USER    NEWDPF tran0	-9.374962 -7.500001 -0.625001
+USER    NEWDPF axisangle0	-0.768305 0.483766 -0.419140 -166.186823
+USER    NEWDPF quaternion0	-0.762730 0.480255 -0.416098 -0.120251
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 CU   UNL     1      -9.375  -7.500  -0.625 +1.60 -6.26    +2.000     9.091
+TER
+ENDMDL
+MODEL        1
+USER    Run = 1
+USER    Cluster Rank = 3
+USER    Number of conformations in this cluster = 3
+USER  
+USER    RMSD from reference structure       = 21.243 A
+USER  
+USER    Estimated Free Energy of Binding    =   -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  491.15 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -4.51 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.23 kcal/mol
+USER        Electrostatic Energy            =   -5.74 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+USER    NEWDPF move	Cu.pdbqt
+USER    NEWDPF about	-8.945000 1.559000 0.000000
+USER    NEWDPF tran0	5.999995 -9.750015 -9.999992
+USER    NEWDPF axisangle0	-0.077355 -0.220474 0.972321 124.014538
+USER    NEWDPF quaternion0	-0.068305 -0.194680 0.858566 0.469360
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 CU   UNL     1       6.000  -9.750 -10.000 +1.23 -5.74    +2.000    21.243
+TER
+ENDMDL
+MODEL       25
+USER    Run = 25
+USER    Cluster Rank = 4
+USER    Number of conformations in this cluster = 4
+USER  
+USER    RMSD from reference structure       = 18.199 A
+USER  
+USER    Estimated Free Energy of Binding    =   -4.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =  608.56 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -4.39 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.21 kcal/mol
+USER        Electrostatic Energy            =   -5.60 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+USER    NEWDPF move	Cu.pdbqt
+USER    NEWDPF about	-8.945000 1.559000 0.000000
+USER    NEWDPF tran0	-0.749996 7.500017 15.125002
+USER    NEWDPF axisangle0	0.658403 -0.198552 0.726005 -143.092821
+USER    NEWDPF quaternion0	0.624548 -0.188342 0.688674 -0.316536
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 CU   UNL     1      -0.750   7.500  15.125 +1.21 -5.60    +2.000    18.199
+TER
+ENDMDL
+MODEL       40
+USER    Run = 40
+USER    Cluster Rank = 5
+USER    Number of conformations in this cluster = 1
+USER  
+USER    RMSD from reference structure       = 14.718 A
+USER  
+USER    Estimated Free Energy of Binding    =   -4.07 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    1.03 mM (millimolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -4.07 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.28 kcal/mol
+USER        Electrostatic Energy            =   -5.36 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dpf
+USER    NEWDPF move	Cu.pdbqt
+USER    NEWDPF about	-8.945000 1.559000 0.000000
+USER    NEWDPF tran0	-17.999861 5.249947 11.000120
+USER    NEWDPF axisangle0	-0.034001 -0.414906 0.909229 -96.345557
+USER    NEWDPF quaternion0	-0.025336 -0.309171 0.677520 -0.666887
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 CU   UNL     1     -18.000   5.250  11.000 +1.28 -5.36    +2.000    14.718
+TER
+ENDMDL
+
+
+AVSFLD: # AVS field file
+AVSFLD: #
+AVSFLD: # Created by AutoDock
+AVSFLD: #
+AVSFLD: ndim=2           # number of dimensions in the field
+AVSFLD: nspace=1         # number of physical coordinates
+AVSFLD: veclen=7         # vector size
+AVSFLD: dim1=1           # atoms
+AVSFLD: dim2=5           # conformations
+AVSFLD: data=Real       # data type (byte,integer,Real,double)
+AVSFLD: field=uniform    # field coordinate layout
+AVSFLD: label= x y z vdW Elec q RMS
+AVSFLD: variable 1 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 5 stride = 12
+AVSFLD: variable 2 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 6 stride = 12
+AVSFLD: variable 3 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 7 stride = 12
+AVSFLD: variable 4 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 8 stride = 12
+AVSFLD: variable 5 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 9 stride = 12
+AVSFLD: variable 6 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 10 stride = 12
+AVSFLD: variable 7 file = C:/Users/Administrator/Desktop/ions_dock/3/shMT_Cu.dlg.pdb filetype = ascii offset = 11 stride = 12
+AVSFLD: # end of file
+
+>>> Closing the docking parameter file (DPF)...
+This docking finished at:			11:11 21" p.m., 09/13/2022
+
+
+________________________________________________________________________________
+
+C:/Users/Administrator/Desktop/ions_dock/3/autodock4.exe: Successful Completion on "QH-20160525KZZR"
+
+Real= 1h 31m 04.21s,  CPU= 6m 50.74s,  System= 6.65s
+________________________________________________________________________________
+

@@ -1,0 +1,9 @@
+REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Cu.pdb
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 CU   UNL     1      -8.945   1.559   0.000  0.00  2.00    +2.000 Cu
+ENDROOT
+TORSDOF 0
