@@ -1,0 +1,13 @@
+npts 126 70 80                       # num.grid points in xyz
+parameter_file AD4_parameters.dat       # parameter library filename 
+gridfld shMt_Cd_Cu.maps.fld          # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types C Cd Cu H HD N OA SA  # receptor atom types
+ligand_types Zn                      # ligand atom types
+receptor shMt_Cd_Cu.pdbqt            # macromolecule
+gridcenter 3.0 3.0 2.0               # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map shMt_Cd_Cu.Zn.map                # atom-specific affinity map
+elecmap shMt_Cd_Cu.e.map             # electrostatic potential map
+dsolvmap shMt_Cd_Cu.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

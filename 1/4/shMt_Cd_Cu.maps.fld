@@ -1,0 +1,32 @@
+# AVS field file
+#
+# AutoDock Atomic Affinity and Electrostatic Grids
+#
+# Created by C:/Users/Administrator/Desktop/ions_dock/4/autogrid4.exe.
+#
+#SPACING 0.375
+#NELEMENTS 126 70 80
+#CENTER 3.000 3.000 2.000
+#MACROMOLECULE shMt_Cd_Cu.pdbqt
+#GRID_PARAMETER_FILE C:/Users/Administrator/Desktop/ions_dock/4/shMt_Cd_Cu_Zn.gpf
+#
+ndim=3			# number of dimensions in the field
+dim1=127			# number of x-elements
+dim2=71			# number of y-elements
+dim3=81			# number of z-elements
+nspace=3		# number of physical coordinates per point
+veclen=3		# number of affinity values at each point
+data=float		# data type (byte, integer, float, double)
+field=uniform		# field type (uniform, rectilinear, irregular)
+coord 1 file=shMt_Cd_Cu.maps.xyz filetype=ascii offset=0
+coord 2 file=shMt_Cd_Cu.maps.xyz filetype=ascii offset=2
+coord 3 file=shMt_Cd_Cu.maps.xyz filetype=ascii offset=4
+label=Zn-affinity	# component label for variable 1
+label=Electrostatics	# component label for variable 1
+label=Desolvation	# component label for variable 2
+#
+# location of affinity grid files and how to read them
+#
+variable 1 file=shMt_Cd_Cu.Zn.map filetype=ascii skip=6
+variable 2 file=shMt_Cd_Cu.e.map filetype=ascii skip=6
+variable 3 file=shMt_Cd_Cu.d.map filetype=ascii skip=6
