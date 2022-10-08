@@ -1,0 +1,32 @@
+# AVS field file
+#
+# AutoDock Atomic Affinity and Electrostatic Grids
+#
+# Created by C:/Users/MXH/Desktop/5/autogrid4.exe.
+#
+#SPACING 0.375
+#NELEMENTS 116 110 114
+#CENTER -11.000 -2.000 -4.000
+#MACROMOLECULE shMTLMBP.pdbqt
+#GRID_PARAMETER_FILE C:/Users/MXH/Desktop/5/MBP_Ag_Cd.gpf
+#
+ndim=3			# number of dimensions in the field
+dim1=117			# number of x-elements
+dim2=111			# number of y-elements
+dim3=115			# number of z-elements
+nspace=3		# number of physical coordinates per point
+veclen=3		# number of affinity values at each point
+data=float		# data type (byte, integer, float, double)
+field=uniform		# field type (uniform, rectilinear, irregular)
+coord 1 file=shMTLMBP.maps.xyz filetype=ascii offset=0
+coord 2 file=shMTLMBP.maps.xyz filetype=ascii offset=2
+coord 3 file=shMTLMBP.maps.xyz filetype=ascii offset=4
+label=Cd-affinity	# component label for variable 1
+label=Electrostatics	# component label for variable 1
+label=Desolvation	# component label for variable 2
+#
+# location of affinity grid files and how to read them
+#
+variable 1 file=MBP_Ag.Cd.map filetype=ascii skip=6
+variable 2 file=shMTLMBP.e.map filetype=ascii skip=6
+variable 3 file=shMTLMBP.d.map filetype=ascii skip=6

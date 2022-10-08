@@ -1,0 +1,3135 @@
+          AutoDock 4.2 Release 4.2.6   
+         (C) 1989-2012 The Scripps Research Institute
+        AutoDock comes with ABSOLUTELY NO WARRANTY.
+        AutoDock is free software, and you are welcome
+        to redistribute it under certain conditions;
+        for details type 'autodock4 -C'
+
+                     main.cc  $Revision: 1.213 $
+
+                   Compiled on Jul 18 2014 at 15:34:58
+
+
+This file was created at:			11:55 57" p.m., 09/14/2022
+                   on host:		"LAPTOP-OL7PPGQ0"
+Current Working Directory = "C:\Users\MXH\Desktop\5"
+
+      ________________________________________________________________
+
+                   SETTING UP DEFAULT PARAMETER LIBRARY
+      ________________________________________________________________
+
+
+Random number generator was seeded with values 2812, 1663170957.
+Docking parameter file (DPF) used for this docking:		C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DPF> autodock_parameter_version 4.2       # used by autodock to validate parameter set
+
+	Autodock parameter version 4.2.
+DPF> parameter_file AD4_parameters.dat       # parameter library filename
+
+Using read_parameter_library() to try to open and read "AD4_parameters.dat".
+
+DPF> outlev 1                             # diagnostic output level
+
+Output Level = 1  ADT-COMPATIBLE OUTPUT DURING DOCKING.
+DPF> intelec                              # calculate internal electrostatics
+
+Electrostatic energies will be calculated for all non-bonds between moving atoms.
+DPF> seed pid time                        # seeds for random generator
+
+Random number generator was seeded with values 2812, 1663170957.
+DPF> ligand_types Zn                      # atoms types in ligand
+
+DPF> fld MBP_Ag_Cd_Cu.maps.fld            # grid_data_file
+
+Opening Grid Map Dimensions file:		MBP_Ag_Cd_Cu.maps.fld
+Grid Point Spacing =				0.375 Angstroms
+
+Even Number of User-specified Grid Points =	116 x-points
+						110 y-points
+						114 z-points
+
+Coordinates of Central Grid Point of Maps =	(-11.000, -2.000, -4.000)
+Macromolecule file used to create Grid Maps =	MBP_Ag_Cd_Cu.pdbqt
+Grid Parameter file used to create Grid Maps =	C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.gpf
+Minimum coordinates in grid = (-32.750, -22.625, -25.375)
+Maximum coordinates in grid = (10.750, 18.625, 17.375)
+
+DPF> map MBP_Ag_Cd_Cu.Zn.map              # atom-specific affinity map
+
+DPF> elecmap MBP_Ag_Cd_Cu.e.map           # electrostatics map
+
+DPF> desolvmap MBP_Ag_Cd_Cu.d.map         # desolvation map
+
+DPF> move Zn.pdbqt                        # small molecule
+
+1,4-interactions will be _ignored_ in the non-bonded internal energy calculation.
+
+Ligand PDBQT file = "Zn.pdbqt"
+
+INPUT LIGAND PDBQT FILE:
+________________________
+
+INPUT-LIGAND-PDBQT: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+INPUT-LIGAND-PDBQT: REMARK  0 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK                            x       y       z     vdW  Elec       q    Type
+INPUT-LIGAND-PDBQT: REMARK                         _______ _______ _______ _____ _____    ______ ____
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: ATOM      1 ZN   UNL     1      -7.960   1.942   0.000  0.00  2.00    +2.000 Zn
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: TORSDOF 0
+________________________________________________________________________________
+
+Total charge on ligand                               =	+2.000 e
+REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+
+*** No Rotatable Bonds detected in Small Molecule. ***
+
+Number of atoms in ligand:  1
+
+Number of non-hydrogen atoms in ligand:  1
+
+Number of vibrational degrees of freedom of ligand:  -3
+
+
+Number of torsional degrees of freedom = 0
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+
+DPF> about -7.96 1.942 0.0                # small molecule center
+
+Small molecule center of rotation =	(-7.960, +1.942, +0.000)
+
+DPF> tran0 random                         # initial coordinates/A or random
+
+Initial translation =			(-26.688, 18.481, -8.484) Angstroms
+DPF> quaternion0 random                   # initial orientation
+
+Each run will begin with a new, random initial orientation.
+Initial quaternion,  (x,y,z,w) =	( -0.259, -0.933, -0.212, 0.134 ),
+DPF> dihe0 random                         # initial dihedrals (relative) or random
+
+DPF> torsdof 0                            # torsional degrees of freedom
+
+Number of torsional degrees of freedom = 0
+Free energy coefficient for torsional degrees of freedom = 0.2744 as specified in parameter library "AD4_parameters.dat".
+
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+DPF> rmstol 2.0                           # cluster_tolerance/A
+
+Maximum RMS tolerance for conformational cluster analysis = 2.00 Angstroms
+DPF> extnrg 1000.0                        # external grid energy
+
+External grid energy (beyond grid map walls) = 1000.00
+
+DPF> e0max 0.0 10000                      # max initial energy; max number of retries
+
+Using user-specified maximum number of retries for simanneal initialization, 10000 retries.
+If the simanneal initial energy is greater than e0max, 0.000,
+then a new, random initial state will be created.
+
+DPF> ga_pop_size 150                      # number of individuals in population
+
+A population of 150 individuals will be used
+DPF> ga_num_evals 2500000                 # maximum number of energy evaluations
+
+There will be at most 2500000 function evaluations used.
+DPF> ga_num_generations 27000             # maximum number of generations
+
+The GA will run for at most 27000 generations.
+DPF> ga_elitism 1                         # number of top individuals to survive to next generation
+
+The 1 best will be preserved each GA generation.
+DPF> ga_mutation_rate 0.02                # rate of gene mutation
+
+The mutation rate is 0.020000.
+DPF> ga_crossover_rate 0.8                # rate of crossover
+
+The crossover rate is 0.800000.
+DPF> ga_window_size 10                    # 
+
+The GA's selection window is 10 generations.
+DPF> ga_cauchy_alpha 0.0                  # Alpha parameter of Cauchy distribution
+
+The alpha parameter (for the Cauchy distribution) is being set to 0.000000.
+DPF> ga_cauchy_beta 1.0                   # Beta parameter Cauchy distribution
+
+The beta parameter (for the Cauchy distribution) is being set to 1.000000.
+DPF> set_ga                               # set the above parameters for GA or LGA
+
+DPF> unbound_model bound                  # state of unbound ligand
+
+DPF> do_global_only 50                    # do this many GA runs
+
+centering ligand on specified point: -7.960 1.942 0.000
+Furthest true ligand atom from "about" center is 0.000 Angstroms (maxrad).
+Number of requested GA dockings = 50 runs
+Unbound model to be used is 'same as bound' [AutoDock 4.2 default].
+
+	BEGINNING GENETIC ALGORITHM DOCKING 1 of 50
+Run: 1 Seed: 1979501481 176298837 [ Run 1 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.434951 -0.026740 -0.685651 0.583083 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.535 -0.033 -0.844 108.665  
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.81 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749836 -5.374998 -17.500315
+DOCKED: USER    NEWDPF quaternion0 -0.434951 -0.026740 -0.685651 0.583083
+DOCKED: USER    NEWDPF axisangle0 -0.535382 -0.032914 -0.843968 108.664642
+DOCKED: USER    NEWDPF quat0 -0.535382 -0.032914 -0.843968 108.664642
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 2 of 50
+Run: 2 Seed: 299256772 2139988377 [ Run 2 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.449
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.251 14.000 quatxyzw -0.336886 -0.627907 0.586265 -0.385401 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.251  14.000  -0.365 -0.680  0.635 -134.663  
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.76 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.67 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000309 -22.250588 14.000094
+DOCKED: USER    NEWDPF quaternion0 -0.336886 -0.627907 0.586265 -0.385401
+DOCKED: USER    NEWDPF axisangle0 -0.365090 -0.680474 0.635346 -134.662677
+DOCKED: USER    NEWDPF quat0 -0.365090 -0.680474 0.635346 -134.662677
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.251  14.000 +1.67 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 3 of 50
+Run: 3 Seed: 848484042 1166352809 [ Run 3 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.574
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.876 6.625 17.375 quatxyzw 0.423614 -0.172339 0.657284 0.599023 center -7.960 1.942 0.000 ntor 0
+State:	 -6.876   6.625  17.375   0.529 -0.215  0.821 106.400  
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.18 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875554 6.624979 17.374962
+DOCKED: USER    NEWDPF quaternion0 0.423614 -0.172339 0.657284 0.599023
+DOCKED: USER    NEWDPF axisangle0 0.529033 -0.215227 0.820854 106.400128
+DOCKED: USER    NEWDPF quat0 0.529033 -0.215227 0.820854 106.400128
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.876   6.625  17.375 +1.31 -7.88    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 4 of 50
+Run: 4 Seed: 134484108 1803202644 [ Run 4 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.674
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.299515 -0.641718 -0.644670 -0.287904 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.313 -0.670 -0.673 -146.535  
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.81 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749782 -5.375107 -17.500283
+DOCKED: USER    NEWDPF quaternion0 -0.299515 -0.641718 -0.644670 -0.287904
+DOCKED: USER    NEWDPF axisangle0 -0.312758 -0.670091 -0.673173 -146.534958
+DOCKED: USER    NEWDPF quat0 -0.312758 -0.670091 -0.673173 -146.534958
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 5 of 50
+Run: 5 Seed: 778284061 182130695 [ Run 5 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.774
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw -0.301219 -0.496819 0.013789 -0.813786 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500  -0.518 -0.855  0.024 -71.065  
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.58 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.499998 2.500147 9.500020
+DOCKED: USER    NEWDPF quaternion0 -0.301219 -0.496819 0.013789 -0.813786
+DOCKED: USER    NEWDPF axisangle0 -0.518303 -0.854868 0.023726 -71.064912
+DOCKED: USER    NEWDPF quat0 -0.518303 -0.854868 0.023726 -71.064912
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 6 of 50
+Run: 6 Seed: 694474917 1332480554 [ Run 6 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.674
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.366785 -0.522557 0.454801 0.620934 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.468 -0.667  0.580 103.231  
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.82 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749506 -5.375127 -17.500094
+DOCKED: USER    NEWDPF quaternion0 -0.366785 -0.522557 0.454801 0.620934
+DOCKED: USER    NEWDPF axisangle0 -0.467920 -0.666644 0.580204 103.231309
+DOCKED: USER    NEWDPF quat0 -0.467920 -0.666644 0.580204 103.231309
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 7 of 50
+Run: 7 Seed: 2077557647 1387993924 [ Run 7 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.773
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw -0.545245 0.010014 -0.529666 0.649662 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500  -0.717  0.013 -0.697 98.968  
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.63 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.499874 2.500045 9.500139
+DOCKED: USER    NEWDPF quaternion0 -0.545245 0.010014 -0.529666 0.649662
+DOCKED: USER    NEWDPF axisangle0 -0.717218 0.013173 -0.696725 98.967742
+DOCKED: USER    NEWDPF quat0 -0.717218 0.013173 -0.696725 98.967742
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 8 of 50
+Run: 8 Seed: 1959301030 30588205 [ Run 8 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.572
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.375 quatxyzw -0.035046 -0.519619 -0.601810 -0.605469 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.375  -0.044 -0.653 -0.756 -105.475  
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.23 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.89 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875071 6.624971 17.374780
+DOCKED: USER    NEWDPF quaternion0 -0.035046 -0.519619 -0.601810 -0.605469
+DOCKED: USER    NEWDPF axisangle0 -0.044035 -0.652895 -0.756167 -105.474859
+DOCKED: USER    NEWDPF quat0 -0.044035 -0.652895 -0.756167 -105.474859
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.89    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 9 of 50
+Run: 9 Seed: 641669097 1511288504 [ Run 9 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.575
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.375 quatxyzw 0.158520 0.940472 -0.189300 0.233558 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.375   0.163  0.967 -0.195 152.987  
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875125 6.624908 17.374994
+DOCKED: USER    NEWDPF quaternion0 0.158520 0.940472 -0.189300 0.233558
+DOCKED: USER    NEWDPF axisangle0 0.163029 0.967223 -0.194684 152.986731
+DOCKED: USER    NEWDPF quat0 0.163029 0.967223 -0.194684 152.986731
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.88    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 10 of 50
+Run: 10 Seed: 1988939696 328490293 [ Run 10 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.563
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.374 quatxyzw -0.250748 -0.785560 -0.520781 0.220925 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.374  -0.257 -0.805 -0.534 154.473  
+
+DOCKED: MODEL       10
+DOCKED: USER    Run = 10
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.56 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.46 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.56 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.33 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.89 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875005 6.624929 17.374078
+DOCKED: USER    NEWDPF quaternion0 -0.250748 -0.785560 -0.520781 0.220925
+DOCKED: USER    NEWDPF axisangle0 -0.257101 -0.805462 -0.533975 154.473213
+DOCKED: USER    NEWDPF quat0 -0.257101 -0.805462 -0.533975 154.473213
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.374 +1.33 -7.89    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 11 of 50
+Run: 11 Seed: 953838206 10758971 [ Run 11 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.897644 0.202982 -0.376363 0.106701 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.903  0.204 -0.379 167.750  
+
+DOCKED: MODEL       11
+DOCKED: USER    Run = 11
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.81 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749910 -5.375194 -17.499883
+DOCKED: USER    NEWDPF quaternion0 -0.897644 0.202982 -0.376363 0.106701
+DOCKED: USER    NEWDPF axisangle0 -0.902797 0.204147 -0.378524 167.749696
+DOCKED: USER    NEWDPF quat0 -0.902797 0.204147 -0.378524 167.749696
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 12 of 50
+Run: 12 Seed: 94352000 522945613 [ Run 12 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.078131 0.488298 0.281427 0.822350 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.137  0.858  0.495 69.359  
+
+DOCKED: MODEL       12
+DOCKED: USER    Run = 12
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.80 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749798 -5.375030 -17.500042
+DOCKED: USER    NEWDPF quaternion0 0.078131 0.488298 0.281427 0.822350
+DOCKED: USER    NEWDPF axisangle0 0.137317 0.858196 0.494614 69.358503
+DOCKED: USER    NEWDPF quat0 0.137317 0.858196 0.494614 69.358503
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 13 of 50
+Run: 13 Seed: 76709686 1271643735 [ Run 13 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.774
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw -0.156822 0.380943 0.867265 -0.279536 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500  -0.163  0.397  0.903 -147.535  
+
+DOCKED: MODEL       13
+DOCKED: USER    Run = 13
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.59 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.500278 2.500186 9.499994
+DOCKED: USER    NEWDPF quaternion0 -0.156822 0.380943 0.867265 -0.279536
+DOCKED: USER    NEWDPF axisangle0 -0.163333 0.396760 0.903274 -147.535029
+DOCKED: USER    NEWDPF quat0 -0.163333 0.396760 0.903274 -147.535029
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 14 of 50
+Run: 14 Seed: 395986959 1327996583 [ Run 14 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.821546 -0.453225 -0.344912 0.026172 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.822 -0.453 -0.345 177.001  
+
+DOCKED: MODEL       14
+DOCKED: USER    Run = 14
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000145 -22.250040 14.000086
+DOCKED: USER    NEWDPF quaternion0 -0.821546 -0.453225 -0.344912 0.026172
+DOCKED: USER    NEWDPF axisangle0 -0.821828 -0.453380 -0.345030 177.000622
+DOCKED: USER    NEWDPF quat0 -0.821828 -0.453380 -0.345030 177.000622
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 15 of 50
+Run: 15 Seed: 1902465330 315796066 [ Run 15 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw 0.398568 0.575928 -0.346134 0.624213 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000   0.510  0.737 -0.443 102.751  
+
+DOCKED: MODEL       15
+DOCKED: USER    Run = 15
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.71 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.13 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000064 -22.250011 14.000083
+DOCKED: USER    NEWDPF quaternion0 0.398568 0.575928 -0.346134 0.624213
+DOCKED: USER    NEWDPF axisangle0 0.510164 0.737184 -0.443050 102.751128
+DOCKED: USER    NEWDPF quat0 0.510164 0.737184 -0.443050 102.751128
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.13    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 16 of 50
+Run: 16 Seed: 1961719135 1556151933 [ Run 16 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw 0.515318 -0.529841 0.570002 0.358905 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000   0.552 -0.568  0.611 137.934  
+
+DOCKED: MODEL       16
+DOCKED: USER    Run = 16
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.71 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.13 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000019 -22.250043 14.000215
+DOCKED: USER    NEWDPF quaternion0 0.515318 -0.529841 0.570002 0.358905
+DOCKED: USER    NEWDPF axisangle0 0.552103 -0.567662 0.610690 137.934085
+DOCKED: USER    NEWDPF quat0 0.552103 -0.567662 0.610690 137.934085
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.13    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 17 of 50
+Run: 17 Seed: 1125248190 1404275974 [ Run 17 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.773
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw 0.912963 -0.162027 0.327653 0.181356 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500   0.928 -0.165  0.333 159.102  
+
+DOCKED: MODEL       17
+DOCKED: USER    Run = 17
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.62 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.500110 2.500345 9.499961
+DOCKED: USER    NEWDPF quaternion0 0.912963 -0.162027 0.327653 0.181356
+DOCKED: USER    NEWDPF axisangle0 0.928357 -0.164759 0.333178 159.102467
+DOCKED: USER    NEWDPF quat0 0.928357 -0.164759 0.333178 159.102467
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 18 of 50
+Run: 18 Seed: 742993515 1621500975 [ Run 18 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.773
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw -0.289423 -0.553940 -0.053726 0.778780 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500  -0.461 -0.883 -0.086 77.702  
+
+DOCKED: MODEL       18
+DOCKED: USER    Run = 18
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.62 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.499967 2.499714 9.499982
+DOCKED: USER    NEWDPF quaternion0 -0.289423 -0.553940 -0.053726 0.778780
+DOCKED: USER    NEWDPF axisangle0 -0.461382 -0.883058 -0.085646 77.701978
+DOCKED: USER    NEWDPF quat0 -0.461382 -0.883058 -0.085646 77.701978
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 19 of 50
+Run: 19 Seed: 59019321 80991597 [ Run 19 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw 0.091625 -0.641956 0.649171 0.397584 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000   0.100 -0.700  0.707 133.145  
+
+DOCKED: MODEL       19
+DOCKED: USER    Run = 19
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.71 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.13 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000052 -22.250007 14.000249
+DOCKED: USER    NEWDPF quaternion0 0.091625 -0.641956 0.649171 0.397584
+DOCKED: USER    NEWDPF axisangle0 0.099857 -0.699630 0.707493 133.145490
+DOCKED: USER    NEWDPF quat0 0.099857 -0.699630 0.707493 133.145490
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.13    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 20 of 50
+Run: 20 Seed: 2058301418 530369033 [ Run 20 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.516927 -0.417889 0.747098 0.000089 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.517 -0.418  0.747 179.990  
+
+DOCKED: MODEL       20
+DOCKED: USER    Run = 20
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.80 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749952 -5.375130 -17.499888
+DOCKED: USER    NEWDPF quaternion0 0.516927 -0.417889 0.747098 0.000089
+DOCKED: USER    NEWDPF axisangle0 0.516927 -0.417889 0.747098 179.989821
+DOCKED: USER    NEWDPF quat0 0.516927 -0.417889 0.747098 179.989821
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 21 of 50
+Run: 21 Seed: 972233119 1296595871 [ Run 21 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.774
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw 0.378813 -0.636858 0.614440 0.270878 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500   0.394 -0.662  0.638 148.567  
+
+DOCKED: MODEL       21
+DOCKED: USER    Run = 21
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.59 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.500078 2.499994 9.500061
+DOCKED: USER    NEWDPF quaternion0 0.378813 -0.636858 0.614440 0.270878
+DOCKED: USER    NEWDPF axisangle0 0.393525 -0.661593 0.638304 148.566908
+DOCKED: USER    NEWDPF quat0 0.393525 -0.661593 0.638304 148.566908
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 22 of 50
+Run: 22 Seed: 1571293998 607553326 [ Run 22 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.662883 -0.319812 -0.672738 0.075692 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.665 -0.321 -0.675 171.318  
+
+DOCKED: MODEL       22
+DOCKED: USER    Run = 22
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000208 -22.250014 14.000075
+DOCKED: USER    NEWDPF quaternion0 -0.662883 -0.319812 -0.672738 0.075692
+DOCKED: USER    NEWDPF axisangle0 -0.664790 -0.320732 -0.674674 171.318049
+DOCKED: USER    NEWDPF quat0 -0.664790 -0.320732 -0.674674 171.318049
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 23 of 50
+Run: 23 Seed: 2102990113 1121352675 [ Run 23 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.389
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -3.125 18.250 4.250 quatxyzw -0.011518 0.610241 0.442037 0.657325 center -7.960 1.942 0.000 ntor 0
+State:	 -3.125  18.250   4.250  -0.015  0.810  0.587 97.808  
+
+DOCKED: MODEL       23
+DOCKED: USER    Run = 23
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   20.74 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.35 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -3.125133 18.250024 4.249990
+DOCKED: USER    NEWDPF quaternion0 -0.011518 0.610241 0.442037 0.657325
+DOCKED: USER    NEWDPF axisangle0 -0.015284 0.809760 0.586562 97.807599
+DOCKED: USER    NEWDPF quat0 -0.015284 0.809760 0.586562 97.807599
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -3.125  18.250   4.250 +1.96 -8.35    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 24 of 50
+Run: 24 Seed: 847511249 514533031 [ Run 24 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.449
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.025680 0.112971 -0.859764 0.497377 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.030  0.130 -0.991 120.347  
+
+DOCKED: MODEL       24
+DOCKED: USER    Run = 24
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.74 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.13 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -31.999907 -22.250094 13.999998
+DOCKED: USER    NEWDPF quaternion0 -0.025680 0.112971 -0.859764 0.497377
+DOCKED: USER    NEWDPF axisangle0 -0.029601 0.130221 -0.991043 120.346818
+DOCKED: USER    NEWDPF quat0 -0.029601 0.130221 -0.991043 120.346818
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.13    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 25 of 50
+Run: 25 Seed: 2140830127 1425234132 [ Run 25 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.449
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.465007 -0.239468 -0.749910 -0.405042 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.509 -0.262 -0.820 -132.212  
+
+DOCKED: MODEL       25
+DOCKED: USER    Run = 25
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.73 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.67 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000195 -22.250139 14.000122
+DOCKED: USER    NEWDPF quaternion0 -0.465007 -0.239468 -0.749910 -0.405042
+DOCKED: USER    NEWDPF axisangle0 -0.508594 -0.261914 -0.820203 -132.212438
+DOCKED: USER    NEWDPF quat0 -0.508594 -0.261914 -0.820203 -132.212438
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.67 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 26 of 50
+Run: 26 Seed: 765828584 417674094 [ Run 26 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.447470 0.341580 -0.531666 0.632792 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.578  0.441 -0.687 101.487  
+
+DOCKED: MODEL       26
+DOCKED: USER    Run = 26
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.79 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749894 -5.375029 -17.499955
+DOCKED: USER    NEWDPF quaternion0 -0.447470 0.341580 -0.531666 0.632792
+DOCKED: USER    NEWDPF axisangle0 -0.577886 0.441134 -0.686621 101.487176
+DOCKED: USER    NEWDPF quat0 -0.577886 0.441134 -0.686621 101.487176
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 27 of 50
+Run: 27 Seed: 672456339 457449119 [ Run 27 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.575
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.375 quatxyzw 0.448820 -0.532580 0.319544 -0.642503 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.375   0.586 -0.695  0.417 -100.043  
+
+DOCKED: MODEL       27
+DOCKED: USER    Run = 27
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875350 6.625017 17.374998
+DOCKED: USER    NEWDPF quaternion0 0.448820 -0.532580 0.319544 -0.642503
+DOCKED: USER    NEWDPF axisangle0 0.585711 -0.695017 0.417006 -100.042518
+DOCKED: USER    NEWDPF quat0 0.585711 -0.695017 0.417006 -100.042518
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.88    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 28 of 50
+Run: 28 Seed: 435015760 537582732 [ Run 28 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.211310 0.720600 0.660057 -0.020215 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.211  0.721  0.660 -177.683  
+
+DOCKED: MODEL       28
+DOCKED: USER    Run = 28
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.81 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749959 -5.375219 -17.499854
+DOCKED: USER    NEWDPF quaternion0 0.211310 0.720600 0.660057 -0.020215
+DOCKED: USER    NEWDPF axisangle0 0.211353 0.720747 0.660192 -177.683326
+DOCKED: USER    NEWDPF quat0 0.211353 0.720747 0.660192 -177.683326
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 29 of 50
+Run: 29 Seed: 745302556 1495279730 [ Run 29 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.389
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -3.125 18.250 4.250 quatxyzw -0.716356 -0.327229 -0.141770 -0.599714 center -7.960 1.942 0.000 ntor 0
+State:	 -3.125  18.250   4.250  -0.895 -0.409 -0.177 -106.301  
+
+DOCKED: MODEL       29
+DOCKED: USER    Run = 29
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   20.75 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.35 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -3.125317 18.250118 4.249989
+DOCKED: USER    NEWDPF quaternion0 -0.716356 -0.327229 -0.141770 -0.599714
+DOCKED: USER    NEWDPF axisangle0 -0.895205 -0.408927 -0.177165 -106.301210
+DOCKED: USER    NEWDPF quat0 -0.895205 -0.408927 -0.177165 -106.301210
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -3.125  18.250   4.250 +1.96 -8.35    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 30 of 50
+Run: 30 Seed: 608169818 682302473 [ Run 30 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.411381 -0.423872 0.189742 -0.784281 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.663 -0.683  0.306 -76.692  
+
+DOCKED: MODEL       30
+DOCKED: USER    Run = 30
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.80 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749920 -5.375147 -17.500210
+DOCKED: USER    NEWDPF quaternion0 0.411381 -0.423872 0.189742 -0.784281
+DOCKED: USER    NEWDPF axisangle0 0.663083 -0.683217 0.305836 -76.691544
+DOCKED: USER    NEWDPF quat0 0.663083 -0.683217 0.305836 -76.691544
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 31 of 50
+Run: 31 Seed: 1004041896 460391345 [ Run 31 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.773
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw 0.723880 -0.202210 0.484552 0.447568 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500   0.809 -0.226  0.542 126.824  
+
+DOCKED: MODEL       31
+DOCKED: USER    Run = 31
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.62 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.499979 2.500021 9.500130
+DOCKED: USER    NEWDPF quaternion0 0.723880 -0.202210 0.484552 0.447568
+DOCKED: USER    NEWDPF axisangle0 0.809483 -0.226123 0.541853 126.824466
+DOCKED: USER    NEWDPF quat0 0.809483 -0.226123 0.541853 126.824466
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 32 of 50
+Run: 32 Seed: 1271601663 1497429100 [ Run 32 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.672
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.749 -5.375 -17.500 quatxyzw -0.219618 -0.098689 -0.836525 -0.492194 center -7.960 1.942 0.000 ntor 0
+State:	 10.749  -5.375 -17.500  -0.252 -0.113 -0.961 -121.030  
+
+DOCKED: MODEL       32
+DOCKED: USER    Run = 32
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.86 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749355 -5.374945 -17.500491
+DOCKED: USER    NEWDPF quaternion0 -0.219618 -0.098689 -0.836525 -0.492194
+DOCKED: USER    NEWDPF axisangle0 -0.252293 -0.113373 -0.960986 -121.030223
+DOCKED: USER    NEWDPF quat0 -0.252293 -0.113373 -0.960986 -121.030223
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.749  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 33 of 50
+Run: 33 Seed: 1940306330 1031447613 [ Run 33 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.388
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -3.125 18.250 4.250 quatxyzw 0.779826 0.029338 -0.625301 0.003056 center -7.960 1.942 0.000 ntor 0
+State:	 -3.125  18.250   4.250   0.780  0.029 -0.625 179.650  
+
+DOCKED: MODEL       33
+DOCKED: USER    Run = 33
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   20.77 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.35 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -3.125302 18.249979 4.250045
+DOCKED: USER    NEWDPF quaternion0 0.779826 0.029338 -0.625301 0.003056
+DOCKED: USER    NEWDPF axisangle0 0.779830 0.029338 -0.625304 179.649815
+DOCKED: USER    NEWDPF quat0 0.779830 0.029338 -0.625304 179.649815
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -3.125  18.250   4.250 +1.96 -8.35    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 34 of 50
+Run: 34 Seed: 1781040607 591797949 [ Run 34 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.673
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.749 -5.375 -17.500 quatxyzw -0.293676 0.884080 -0.344959 0.114723 center -7.960 1.942 0.000 ntor 0
+State:	 10.749  -5.375 -17.500  -0.296  0.890 -0.347 166.825  
+
+DOCKED: MODEL       34
+DOCKED: USER    Run = 34
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.85 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749188 -5.375016 -17.500157
+DOCKED: USER    NEWDPF quaternion0 -0.293676 0.884080 -0.344959 0.114723
+DOCKED: USER    NEWDPF axisangle0 -0.295628 0.889955 -0.347251 166.824756
+DOCKED: USER    NEWDPF quat0 -0.295628 0.889955 -0.347251 166.824756
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.749  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 35 of 50
+Run: 35 Seed: 810010094 1024018368 [ Run 35 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw 0.231599 0.305842 0.475129 0.791880 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000   0.379  0.501  0.778 75.277  
+
+DOCKED: MODEL       35
+DOCKED: USER    Run = 35
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000198 -22.250018 14.000071
+DOCKED: USER    NEWDPF quaternion0 0.231599 0.305842 0.475129 0.791880
+DOCKED: USER    NEWDPF axisangle0 0.379249 0.500825 0.778038 75.276808
+DOCKED: USER    NEWDPF quat0 0.379249 0.500825 0.778038 75.276808
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 36 of 50
+Run: 36 Seed: 1340060084 634629757 [ Run 36 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.676
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.459709 0.632510 0.058946 -0.620584 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.586  0.807  0.075 -103.282  
+
+DOCKED: MODEL       36
+DOCKED: USER    Run = 36
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.79 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749958 -5.375054 -17.499964
+DOCKED: USER    NEWDPF quaternion0 -0.459709 0.632510 0.058946 -0.620584
+DOCKED: USER    NEWDPF axisangle0 -0.586258 0.806629 0.075173 -103.282434
+DOCKED: USER    NEWDPF quat0 -0.586258 0.806629 0.075173 -103.282434
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 37 of 50
+Run: 37 Seed: 1622196248 2140137589 [ Run 37 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.676
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.561617 -0.318514 0.087697 0.758580 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.862 -0.489  0.135 81.322  
+
+DOCKED: MODEL       37
+DOCKED: USER    Run = 37
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.78 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749922 -5.375023 -17.499998
+DOCKED: USER    NEWDPF quaternion0 -0.561617 -0.318514 0.087697 0.758580
+DOCKED: USER    NEWDPF axisangle0 -0.861932 -0.488833 0.134592 81.321591
+DOCKED: USER    NEWDPF quat0 -0.861932 -0.488833 0.134592 81.321591
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 38 of 50
+Run: 38 Seed: 472529098 1918537323 [ Run 38 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.674
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw -0.027202 0.742838 0.197239 -0.639178 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500  -0.035  0.966  0.256 -100.539  
+
+DOCKED: MODEL       38
+DOCKED: USER    Run = 38
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.82 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749709 -5.375381 -17.499966
+DOCKED: USER    NEWDPF quaternion0 -0.027202 0.742838 0.197239 -0.639178
+DOCKED: USER    NEWDPF axisangle0 -0.035370 0.965905 0.256467 -100.538919
+DOCKED: USER    NEWDPF quat0 -0.035370 0.965905 0.256467 -100.538919
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 39 of 50
+Run: 39 Seed: 99061830 335581122 [ Run 39 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.351667 -0.188208 -0.579621 0.710597 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.500 -0.267 -0.824 89.433  
+
+DOCKED: MODEL       39
+DOCKED: USER    Run = 39
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000029 -22.250189 14.000165
+DOCKED: USER    NEWDPF quaternion0 -0.351667 -0.188208 -0.579621 0.710597
+DOCKED: USER    NEWDPF axisangle0 -0.499811 -0.267493 -0.823794 89.433056
+DOCKED: USER    NEWDPF quat0 -0.499811 -0.267493 -0.823794 89.433056
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 40 of 50
+Run: 40 Seed: 279990365 791468505 [ Run 40 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.575
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.375 quatxyzw -0.093924 -0.731740 0.665831 0.111368 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.375  -0.095 -0.736  0.670 167.212  
+
+DOCKED: MODEL       40
+DOCKED: USER    Run = 40
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.16 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.875302 6.624993 17.374994
+DOCKED: USER    NEWDPF quaternion0 -0.093924 -0.731740 0.665831 0.111368
+DOCKED: USER    NEWDPF axisangle0 -0.094512 -0.736321 0.669999 167.211597
+DOCKED: USER    NEWDPF quat0 -0.094512 -0.736321 0.669999 167.211597
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.88    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 41 of 50
+Run: 41 Seed: 549124293 1095733519 [ Run 41 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.675
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.441938 0.515444 0.018611 -0.733936 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.651  0.759  0.027 -85.565  
+
+DOCKED: MODEL       41
+DOCKED: USER    Run = 41
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.81 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749926 -5.375198 -17.500314
+DOCKED: USER    NEWDPF quaternion0 0.441938 0.515444 0.018611 -0.733936
+DOCKED: USER    NEWDPF axisangle0 0.650657 0.758877 0.027401 -85.565225
+DOCKED: USER    NEWDPF quat0 0.650657 0.758877 0.027401 -85.565225
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 42 of 50
+Run: 42 Seed: 1191658042 199734121 [ Run 42 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -5.773
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -15.500 2.500 9.500 quatxyzw 0.002605 -0.835332 -0.436982 -0.333556 center -7.960 1.942 0.000 ntor 0
+State:	-15.500   2.500   9.500   0.003 -0.886 -0.464 -141.031  
+
+DOCKED: MODEL       42
+DOCKED: USER    Run = 42
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   58.63 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -6.80 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -15.500277 2.499924 9.499920
+DOCKED: USER    NEWDPF quaternion0 0.002605 -0.835332 -0.436982 -0.333556
+DOCKED: USER    NEWDPF axisangle0 0.002763 -0.886078 -0.463528 -141.030541
+DOCKED: USER    NEWDPF quat0 0.002763 -0.886078 -0.463528 -141.030541
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 43 of 50
+Run: 43 Seed: 1229469855 1269008406 [ Run 43 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.573
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -6.875 6.625 17.375 quatxyzw 0.136157 0.079461 0.976524 0.146793 center -7.960 1.942 0.000 ntor 0
+State:	 -6.875   6.625  17.375   0.138  0.080  0.987 163.118  
+
+DOCKED: MODEL       43
+DOCKED: USER    Run = 43
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   15.19 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.88 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -6.874991 6.624979 17.374879
+DOCKED: USER    NEWDPF quaternion0 0.136157 0.079461 0.976524 0.146793
+DOCKED: USER    NEWDPF axisangle0 0.137649 0.080331 0.987218 163.117727
+DOCKED: USER    NEWDPF quat0 0.137649 0.080331 0.987218 163.117727
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.88    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 44 of 50
+Run: 44 Seed: 221649317 422194206 [ Run 44 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.449
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.212564 0.056298 0.368512 -0.903242 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.495  0.131  0.859 -50.825  
+
+DOCKED: MODEL       44
+DOCKED: USER    Run = 44
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.73 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.67 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000370 -22.249992 14.000030
+DOCKED: USER    NEWDPF quaternion0 -0.212564 0.056298 0.368512 -0.903242
+DOCKED: USER    NEWDPF axisangle0 -0.495335 0.131189 0.858739 -50.824965
+DOCKED: USER    NEWDPF quat0 -0.495335 0.131189 0.858739 -50.824965
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.67 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 45 of 50
+Run: 45 Seed: 495768138 224982393 [ Run 45 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.161063 -0.614096 -0.074042 0.769066 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.252 -0.961 -0.116 79.460  
+
+DOCKED: MODEL       45
+DOCKED: USER    Run = 45
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000228 -22.250005 14.000054
+DOCKED: USER    NEWDPF quaternion0 -0.161063 -0.614096 -0.074042 0.769066
+DOCKED: USER    NEWDPF axisangle0 -0.251989 -0.960772 -0.115841 79.459768
+DOCKED: USER    NEWDPF quat0 -0.251989 -0.960772 -0.115841 79.459768
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 46 of 50
+Run: 46 Seed: 1698535915 1665289281 [ Run 46 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.676
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.500 quatxyzw 0.147133 -0.539005 -0.604231 0.568094 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.500   0.179 -0.655 -0.734 110.765  
+
+DOCKED: MODEL       46
+DOCKED: USER    Run = 46
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.78 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749974 -5.375039 -17.500016
+DOCKED: USER    NEWDPF quaternion0 0.147133 -0.539005 -0.604231 0.568094
+DOCKED: USER    NEWDPF axisangle0 0.178784 -0.654956 -0.734213 110.765202
+DOCKED: USER    NEWDPF quat0 0.178784 -0.654956 -0.734213 110.765202
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 47 of 50
+Run: 47 Seed: 303204862 656702942 [ Run 47 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.525519 0.737353 -0.290340 0.309585 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.553  0.775 -0.305 143.932  
+
+DOCKED: MODEL       47
+DOCKED: USER    Run = 47
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.72 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000094 -22.250122 14.000137
+DOCKED: USER    NEWDPF quaternion0 -0.525519 0.737353 -0.290340 0.309585
+DOCKED: USER    NEWDPF axisangle0 -0.552671 0.775449 -0.305341 143.931585
+DOCKED: USER    NEWDPF quat0 -0.552671 0.775449 -0.305341 143.931585
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 48 of 50
+Run: 48 Seed: 902053373 1562937044 [ Run 48 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.389
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -3.125 18.250 4.250 quatxyzw -0.264238 0.718560 -0.004609 0.643295 center -7.960 1.942 0.000 ntor 0
+State:	 -3.125  18.250   4.250  -0.345  0.939 -0.006 99.924  
+
+DOCKED: MODEL       48
+DOCKED: USER    Run = 48
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   20.75 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.39 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.96 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.35 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -3.125025 18.250077 4.250050
+DOCKED: USER    NEWDPF quaternion0 -0.264238 0.718560 -0.004609 0.643295
+DOCKED: USER    NEWDPF axisangle0 -0.345130 0.938535 -0.006020 99.924051
+DOCKED: USER    NEWDPF quat0 -0.345130 0.938535 -0.006020 99.924051
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      -3.125  18.250   4.250 +1.96 -8.35    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 49 of 50
+Run: 49 Seed: 1424062138 1193959116 [ Run 49 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.673
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 10.750 -5.375 -17.501 quatxyzw 0.343401 -0.937357 0.038888 -0.043880 center -7.960 1.942 0.000 ntor 0
+State:	 10.750  -5.375 -17.501   0.344 -0.938  0.039 -174.970  
+
+DOCKED: MODEL       49
+DOCKED: USER    Run = 49
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.67 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   12.84 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -7.67 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 10.749634 -5.374979 -17.500520
+DOCKED: USER    NEWDPF quaternion0 0.343401 -0.937357 0.038888 -0.043880
+DOCKED: USER    NEWDPF axisangle0 0.343732 -0.938261 0.038926 -174.970071
+DOCKED: USER    NEWDPF quat0 0.343732 -0.938261 0.038926 -174.970071
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1      10.750  -5.375 -17.501 +1.00 -7.67    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 50 of 50
+Run: 50 Seed: 1933806087 647308535 [ Run 50 of 50 GA/GALS ]
+Beginning GENETIC ALGORITHM (GA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -6.450
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans -32.000 -22.250 14.000 quatxyzw -0.207170 0.755350 0.516738 -0.345699 center -7.960 1.942 0.000 ntor 0
+State:	-32.000 -22.250  14.000  -0.221  0.805  0.551 -139.551  
+
+DOCKED: MODEL       50
+DOCKED: USER    Run = 50
+DOCKED: USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =   18.73 uM (micromolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +1.67 kcal/mol
+DOCKED: USER        Electrostatic Energy            =   -8.12 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Zn.pdbqt
+DOCKED: USER    NEWDPF about -7.960000 1.942000 0.000000
+DOCKED: USER    NEWDPF tran0 -32.000090 -22.250188 14.000063
+DOCKED: USER    NEWDPF quaternion0 -0.207170 0.755350 0.516738 -0.345699
+DOCKED: USER    NEWDPF axisangle0 -0.220782 0.804981 0.550691 -139.551065
+DOCKED: USER    NEWDPF quat0 -0.220782 0.804981 0.550691 -139.551065
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = C:\Users\Administrator\Desktop\ions_dock\ligand\Zn.pdb
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.67 -8.12    +2.000 Zn
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+DPF> analysis                             # perform a ranked cluster analysis
+
+
+		CLUSTER ANALYSIS OF CONFORMATIONS
+		_________________________________
+
+Number of conformations = 50
+
+RMSD cluster analysis will be performed using the ligand atoms only (1 / 1 total atoms).
+
+Outputting structurally similar clusters, ranked in order of increasing energy.
+
+
+________________________________________________________________________________
+
+Number of distinct conformational clusters found = 5,  out of 50 runs,
+Using an rmsd-tolerance of 2.0 A
+
+
+	CLUSTERING HISTOGRAM
+	____________________
+
+________________________________________________________________________________
+     |           |     |           |     |                                    
+Clus | Lowest    | Run | Mean      | Num | Histogram                          
+-ter | Binding   |     | Binding   | in  |                                    
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -6.68 |  46 |     -6.67 |  17 |#################
+   2 |     -6.57 |   9 |     -6.57 |   7 |#######
+   3 |     -6.45 |  19 |     -6.45 |  14 |##############
+   4 |     -6.39 |  23 |     -6.39 |   4 |####
+   5 |     -5.77 |   5 |     -5.77 |   8 |########
+_____|___________|_____|___________|_____|______________________________________
+
+
+Number of multi-member conformational clusters found = 5, out of 50 runs.
+
+	RMSD TABLE
+	__________
+
+_____________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     46       -6.68      0.00     26.64           RANKING
+   1      2     37       -6.68      0.00     26.64           RANKING
+   1      3     36       -6.68      0.00     26.64           RANKING
+   1      4     26       -6.68      0.00     26.64           RANKING
+   1      5     12       -6.68      0.00     26.64           RANKING
+   1      6     20       -6.67      0.00     26.64           RANKING
+   1      7     30       -6.67      0.00     26.64           RANKING
+   1      8     11       -6.67      0.00     26.64           RANKING
+   1      9      1       -6.67      0.00     26.64           RANKING
+   1     10     28       -6.67      0.00     26.64           RANKING
+   1     11     41       -6.67      0.00     26.64           RANKING
+   1     12      4       -6.67      0.00     26.64           RANKING
+   1     13     38       -6.67      0.00     26.64           RANKING
+   1     14      6       -6.67      0.00     26.64           RANKING
+   1     15     49       -6.67      0.00     26.64           RANKING
+   1     16     34       -6.67      0.00     26.64           RANKING
+   1     17     32       -6.67      0.00     26.64           RANKING
+   2      1      9       -6.57      0.00     18.03           RANKING
+   2      2     40       -6.57      0.00     18.03           RANKING
+   2      3     27       -6.57      0.00     18.03           RANKING
+   2      4      3       -6.57      0.00     18.03           RANKING
+   2      5     43       -6.57      0.00     18.03           RANKING
+   2      6      8       -6.57      0.00     18.03           RANKING
+   2      7     10       -6.56      0.00     18.03           RANKING
+   3      1     19       -6.45      0.00     36.87           RANKING
+   3      2     16       -6.45      0.00     36.87           RANKING
+   3      3     15       -6.45      0.00     36.87           RANKING
+   3      4     14       -6.45      0.00     36.87           RANKING
+   3      5     35       -6.45      0.00     36.87           RANKING
+   3      6     22       -6.45      0.00     36.87           RANKING
+   3      7     47       -6.45      0.00     36.87           RANKING
+   3      8     45       -6.45      0.00     36.87           RANKING
+   3      9     39       -6.45      0.00     36.87           RANKING
+   3     10     50       -6.45      0.00     36.87           RANKING
+   3     11     25       -6.45      0.00     36.87           RANKING
+   3     12     44       -6.45      0.00     36.87           RANKING
+   3     13     24       -6.45      0.00     36.87           RANKING
+   3     14      2       -6.45      0.00     36.87           RANKING
+   4      1     23       -6.39      0.00     17.53           RANKING
+   4      2     48       -6.39      0.00     17.53           RANKING
+   4      3     29       -6.39      0.00     17.53           RANKING
+   4      4     33       -6.39      0.00     17.53           RANKING
+   5      1      5       -5.77      0.00     12.14           RANKING
+   5      2     21       -5.77      0.00     12.14           RANKING
+   5      3     13       -5.77      0.00     12.14           RANKING
+   5      4     31       -5.77      0.00     12.14           RANKING
+   5      5     17       -5.77      0.00     12.14           RANKING
+   5      6     18       -5.77      0.00     12.14           RANKING
+   5      7      7       -5.77      0.00     12.14           RANKING
+   5      8     42       -5.77      0.00     12.14           RANKING
+_______________________________________________________________________
+
+
+
+	INFORMATION ENTROPY ANALYSIS FOR THIS CLUSTERING
+	________________________________________________
+
+
+Information entropy for this clustering = 0.38  (rmstol = 2.00 Angstrom)
+
+_______________________________________________________________________
+
+
+	STATISTICAL MECHANICAL ANALYSIS
+	_______________________________
+
+
+Partition function, Q =    50.55            at Temperature, T = 298.15 K
+Free energy,        A ~ -2324.23 kcal/mol   at Temperature, T = 298.15 K
+Internal energy,    U =    -6.43 kcal/mol   at Temperature, T = 298.15 K
+Entropy,            S =     7.77 kcal/mol/K at Temperature, T = 298.15 K
+
+_______________________________________________________________________
+
+
+	LOWEST ENERGY DOCKED CONFORMATION from EACH CLUSTER
+	___________________________________________________
+
+
+
+Keeping original residue number (specified in the input PDBQ file) for outputting.
+
+MODEL       46
+USER    Run = 46
+USER    Cluster Rank = 1
+USER    Number of conformations in this cluster = 17
+USER  
+USER    RMSD from reference structure       = 26.643 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   12.78 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -6.68 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.00 kcal/mol
+USER        Electrostatic Energy            =   -7.67 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+USER    NEWDPF move	Zn.pdbqt
+USER    NEWDPF about	-7.960000 1.942000 0.000000
+USER    NEWDPF tran0	10.749974 -5.375039 -17.500016
+USER    NEWDPF axisangle0	0.178784 -0.654956 -0.734213 110.765202
+USER    NEWDPF quaternion0	0.147133 -0.539005 -0.604231 0.568094
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 ZN   UNL     1      10.750  -5.375 -17.500 +1.00 -7.67    +2.000    26.643
+TER
+ENDMDL
+MODEL        9
+USER    Run = 9
+USER    Cluster Rank = 2
+USER    Number of conformations in this cluster = 7
+USER  
+USER    RMSD from reference structure       = 18.028 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   15.16 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -6.57 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.31 kcal/mol
+USER        Electrostatic Energy            =   -7.88 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+USER    NEWDPF move	Zn.pdbqt
+USER    NEWDPF about	-7.960000 1.942000 0.000000
+USER    NEWDPF tran0	-6.875125 6.624908 17.374994
+USER    NEWDPF axisangle0	0.163029 0.967223 -0.194684 152.986731
+USER    NEWDPF quaternion0	0.158520 0.940472 -0.189300 0.233558
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 ZN   UNL     1      -6.875   6.625  17.375 +1.31 -7.88    +2.000    18.028
+TER
+ENDMDL
+MODEL       19
+USER    Run = 19
+USER    Cluster Rank = 3
+USER    Number of conformations in this cluster = 14
+USER  
+USER    RMSD from reference structure       = 36.867 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   18.71 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -6.45 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.68 kcal/mol
+USER        Electrostatic Energy            =   -8.13 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+USER    NEWDPF move	Zn.pdbqt
+USER    NEWDPF about	-7.960000 1.942000 0.000000
+USER    NEWDPF tran0	-32.000052 -22.250007 14.000249
+USER    NEWDPF axisangle0	0.099857 -0.699630 0.707493 133.145490
+USER    NEWDPF quaternion0	0.091625 -0.641956 0.649171 0.397584
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 ZN   UNL     1     -32.000 -22.250  14.000 +1.68 -8.13    +2.000    36.867
+TER
+ENDMDL
+MODEL       23
+USER    Run = 23
+USER    Cluster Rank = 4
+USER    Number of conformations in this cluster = 4
+USER  
+USER    RMSD from reference structure       = 17.533 A
+USER  
+USER    Estimated Free Energy of Binding    =   -6.39 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   20.74 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -6.39 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.96 kcal/mol
+USER        Electrostatic Energy            =   -8.35 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+USER    NEWDPF move	Zn.pdbqt
+USER    NEWDPF about	-7.960000 1.942000 0.000000
+USER    NEWDPF tran0	-3.125133 18.250024 4.249990
+USER    NEWDPF axisangle0	-0.015284 0.809760 0.586562 97.807599
+USER    NEWDPF quaternion0	-0.011518 0.610241 0.442037 0.657325
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 ZN   UNL     1      -3.125  18.250   4.250 +1.96 -8.35    +2.000    17.533
+TER
+ENDMDL
+MODEL        5
+USER    Run = 5
+USER    Cluster Rank = 5
+USER    Number of conformations in this cluster = 8
+USER  
+USER    RMSD from reference structure       = 12.141 A
+USER  
+USER    Estimated Free Energy of Binding    =   -5.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =   58.58 uM (micromolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =   -5.77 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +1.03 kcal/mol
+USER        Electrostatic Energy            =   -6.80 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dpf
+USER    NEWDPF move	Zn.pdbqt
+USER    NEWDPF about	-7.960000 1.942000 0.000000
+USER    NEWDPF tran0	-15.499998 2.500147 9.500020
+USER    NEWDPF axisangle0	-0.518303 -0.854868 0.023726 -71.064912
+USER    NEWDPF quaternion0	-0.301219 -0.496819 0.013789 -0.813786
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 ZN   UNL     1     -15.500   2.500   9.500 +1.03 -6.80    +2.000    12.141
+TER
+ENDMDL
+
+
+AVSFLD: # AVS field file
+AVSFLD: #
+AVSFLD: # Created by AutoDock
+AVSFLD: #
+AVSFLD: ndim=2           # number of dimensions in the field
+AVSFLD: nspace=1         # number of physical coordinates
+AVSFLD: veclen=7         # vector size
+AVSFLD: dim1=1           # atoms
+AVSFLD: dim2=5           # conformations
+AVSFLD: data=Real       # data type (byte,integer,Real,double)
+AVSFLD: field=uniform    # field coordinate layout
+AVSFLD: label= x y z vdW Elec q RMS
+AVSFLD: variable 1 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 5 stride = 12
+AVSFLD: variable 2 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 6 stride = 12
+AVSFLD: variable 3 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 7 stride = 12
+AVSFLD: variable 4 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 8 stride = 12
+AVSFLD: variable 5 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 9 stride = 12
+AVSFLD: variable 6 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 10 stride = 12
+AVSFLD: variable 7 file = C:/Users/MXH/Desktop/5/MBP_Ag_Cd_Cu_Zn.dlg.pdb filetype = ascii offset = 11 stride = 12
+AVSFLD: # end of file
+
+>>> Closing the docking parameter file (DPF)...
+This docking finished at:			0:29 24" a.m., 09/15/2022
+
+
+________________________________________________________________________________
+
+C:/Users/MXH/Desktop/5/autodock4.exe: Successful Completion on "LAPTOP-OL7PPGQ0"
+
+Real= 33m 27.00s,  CPU= 4m 42.52s,  System= 1.45s
+________________________________________________________________________________
+
