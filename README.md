@@ -5,6 +5,7 @@ Project: SolHMetal:Application of new biofilm in industrial water treatment
 Track:Environment
 
 Team wiki delivery: https://2022.igem.wiki/xjtlu-china/
+(wiki freeze on 12 oct 2022)
 
 Team promotion video: https://video.igem.org/w/jKHWKW82h13X16vyKK5NwQ
 
