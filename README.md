@@ -9,6 +9,7 @@ Team wiki delivery: https://2022.igem.wiki/xjtlu-china/
 
 Team promotion video: https://video.igem.org/w/jKHWKW82h13X16vyKK5NwQ
 
+GOLD MEDAL; BEST ENVIRONMENT PROJECT, UNDERGRAD NOMINATION
 
 International Genetically Engineered Machine (iGEM) competition is a worldwide synthetic biology competition which emphasize on the Design-Build-Test-Learn engineering success and interdisplinary research, inluding Biology,Mathematics,Computer Science and Engineering,etc.The field of synthetic biology, still in its early stages, has largely been driven by experimental expertise, and much of its success can be attributed to the skill of the researchers in specific domains of biology. There has been a concerted effort to assemble repositories of standardized components; however, creating and integrating synthetic components remains an ad hoc process. Inspired by these challenges, the field has seen a proliferation of efforts to create computer-aided design tools addressing synthetic biology's specific design needs, many drawing on prior expertise from the Model work.
 
